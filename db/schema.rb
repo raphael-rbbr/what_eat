@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_27_004701) do
+ActiveRecord::Schema.define(version: 2022_05_28_145519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(version: 2022_05_27_004701) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.bigint "meal_id", null: false
+    t.bigint "recipe_id", null: false
     t.bigint "groceries_list_id", null: false
     t.string "quantity"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["groceries_list_id"], name: "index_ingredients_on_groceries_list_id"
-    t.index ["meal_id"], name: "index_ingredients_on_meal_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "intolerances", force: :cascade do |t|
@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 2022_05_27_004701) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
     t.bigint "plan_id", null: false
+    t.bigint "recipe_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plan_id"], name: "index_meals_on_plan_id"
+    t.index ["recipe_id"], name: "index_meals_on_recipe_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 2022_05_27_004701) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "prep_time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,8 +97,10 @@ ActiveRecord::Schema.define(version: 2022_05_27_004701) do
   add_foreign_key "groceries_lists", "plans"
   add_foreign_key "groceries_lists", "users"
   add_foreign_key "ingredients", "groceries_lists"
-  add_foreign_key "ingredients", "meals"
+  add_foreign_key "ingredients", "recipes"
   add_foreign_key "intolerances", "users"
   add_foreign_key "meals", "plans"
+  add_foreign_key "meals", "recipes"
   add_foreign_key "plans", "users"
+  add_foreign_key "recipes", "users"
 end
