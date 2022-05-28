@@ -1,11 +1,9 @@
-class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
-
-  def home
-  end
+class Profile::GroceriesListsController < ApplicationController
+  before_action :set_user
 
   def show
-    authorize @user
+    # @groceries_lists = @user.groceries_lists
+    # authorize @user
   end
 
   private
