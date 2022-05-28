@@ -14,32 +14,21 @@ Diet.destroy_all
 Intolerance.destroy_all
 User.destroy_all
 
+def check_intolerances
+  a = []
 
-users = []
-meals = []
-recipes = []
-lists = []
-ingredients = []
-plans = []
+  User.last.intolerances.each do |i|
+    a << i.intolerance_type
+  end
 
-url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/592479/information")
+  a.join(",")
+end
 
-# ("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?diet=vegetarian&intolerances=peanut,shellfish")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-request["X-RapidAPI-Key"] = '8ef426af45msh41e716462eeeb6dp1173a3jsn61455848d5cf'
-
-response = http.request(request).read_body
-recipe = JSON.parse(response)
+# Creating User/Diet/Intolerances for further research with such parameters
 
 User.create!(email: "nicholas@gmail.com",
-                    name: "Nicholas",
-                    password: "123456")
+             name: "Nicholas",
+             password: "123456")
 puts "User created: #{User.last.email}, password 123456"
 
 Diet.create!(user_id: User.last.id,
@@ -54,41 +43,79 @@ Intolerance.create!(user_id: User.last.id,
                     intolerance_type: 3
 )
 
+# Creating Plan and GroceriesList
+
 Plan.create!(user_id: User.last.id,
-            start_date: "",
-            final_date: ""
+  start_date: "",
+  final_date: ""
 )
 puts "Plan created: #{Plan.last.id}"
 
 GroceriesList.create!(user_id: User.last.id,
-                      plan_id: Plan.last.id
+            plan_id: Plan.last.id
 )
 puts "GroceriesList created: #{GroceriesList.last.id}"
 
-Recipe.create!(title: recipe["title"],
-               instructions: recipe["instructions"],
-               prep_time: recipe["readyInMinutes"],
-               servings: recipe["servings"],
-               user_id: User.last.id
-               # image: recipe["image"]
-)
-puts "Recipe created: #{Recipe.last.id} - #{Recipe.last.title}"
+# Search of recipes list from API based on the User.Diet/Intolerances
 
-Meal.create!(plan_id: Plan.last.id,
-             recipe_id: Recipe.last.id
-)
-puts "Meal created: #{Meal.last.id}"
+url_list = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?diet=#{User.last.diet.diet_type}&intolerances=#{check_intolerances}")
 
-recipe["extendedIngredients"].each do |i|
-  Ingredient.create!(description: i["original"],
-                     name: i["name"],
-                     quantity: i["amount"],
-                     unit: i["unit"],
-                     meal_id: Meal.last.id,
-                     groceries_list_id: GroceriesList.last.id
+http = Net::HTTP.new(url_list.host, url_list.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request_list = Net::HTTP::Get.new(url_list)
+request_list["X-RapidAPI-Host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+request_list["X-RapidAPI-Key"] = '8ef426af45msh41e716462eeeb6dp1173a3jsn61455848d5cf'
+
+response_list = http.request(request_list).read_body
+list = JSON.parse(response_list)
+
+# Loop for each result of above list
+# Creating a Recipe for each one
+
+list["results"].each do |r|
+  id = r["id"]
+  url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/#{id}/information")
+
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+  request = Net::HTTP::Get.new(url)
+  request["X-RapidAPI-Host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+  request["X-RapidAPI-Key"] = '8ef426af45msh41e716462eeeb6dp1173a3jsn61455848d5cf'
+
+  response = http.request(request).read_body
+  recipe = JSON.parse(response)
+
+  Recipe.create!(title: recipe["title"],
+                 instructions: recipe["instructions"],
+                 prep_time: recipe["readyInMinutes"],
+                 servings: recipe["servings"],
+                 user_id: User.last.id
+                 # image: recipe["image"]
   )
-  puts "Ingredient created: #{Ingredient.last.id} - #{Ingredient.last.name}"
+  puts "Recipe created: #{Recipe.last.id} - #{Recipe.last.title}"
+
+  Meal.create!(plan_id: Plan.last.id,
+               recipe_id: Recipe.last.id
+  )
+  puts "Meal created: #{Meal.last.id}"
+
+  recipe["extendedIngredients"].each do |i|
+    Ingredient.create!(description: i["original"],
+                       name: i["name"],
+                       quantity: i["amount"],
+                       unit: i["unit"],
+                       meal_id: Meal.last.id,
+                       groceries_list_id: GroceriesList.last.id
+    )
+    puts "Ingredient created: #{Ingredient.last.id} - #{Ingredient.last.name}"
+  end
 end
+
+
 
 
 
