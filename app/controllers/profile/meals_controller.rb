@@ -1,4 +1,4 @@
-class MealController < ApplicationController
+class Profile::MealsController < ApplicationController
 
   def new
 
