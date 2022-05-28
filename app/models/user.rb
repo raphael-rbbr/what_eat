@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :meals, through: :plans
   has_many :intolerances
   has_many :groceries_lists
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
   has_one :diet
 end
