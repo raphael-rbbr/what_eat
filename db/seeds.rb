@@ -10,8 +10,9 @@ Meal.destroy_all
 Recipe.destroy_all
 GroceriesList.destroy_all
 Plan.destroy_all
+Diet.destroy_all
+Intolerance.destroy_all
 User.destroy_all
-
 
 
 users = []
@@ -21,7 +22,9 @@ lists = []
 ingredients = []
 plans = []
 
-url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/479101/information")
+url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/592479/information")
+
+# ("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?diet=vegetarian&intolerances=peanut,shellfish")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -38,6 +41,18 @@ User.create!(email: "nicholas@gmail.com",
                     name: "Nicholas",
                     password: "123456")
 puts "User created: #{User.last.email}, password 123456"
+
+Diet.create!(user_id: User.last.id,
+             diet_type: 7
+)
+
+Intolerance.create!(user_id: User.last.id,
+                    intolerance_type: 2
+)
+
+Intolerance.create!(user_id: User.last.id,
+                    intolerance_type: 3
+)
 
 Plan.create!(user_id: User.last.id,
             start_date: "",

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_145519) do
 
   create_table "diets", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "type"
+    t.integer "diet_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_diets_on_user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_145519) do
   end
 
   create_table "intolerances", force: :cascade do |t|
-    t.integer "type"
+    t.integer "intolerance_type"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
