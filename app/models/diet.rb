@@ -1,7 +1,7 @@
 class Diet < ApplicationRecord
   belongs_to :user
 
-  enum type: {
+  enum diet_type: {
     no_diet: 0,
     pescetarian: 1,
     lacto_vegetarian: 2,

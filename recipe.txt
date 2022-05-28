@@ -1,0 +1,706 @@
+{
+    "vegetarian": true,
+    "vegan": true,
+    "glutenFree": true,
+    "dairyFree": true,
+    "veryHealthy": true,
+    "cheap": false,
+    "veryPopular": true,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 6,
+    "gaps": "no",
+    "preparationMinutes": 25,
+    "cookingMinutes": 25,
+    "aggregateLikes": 32767,
+    "healthScore": 100,
+    "creditsText": "Fat Free Vegan",
+    "sourceName": "Fat Free Vegan",
+    "pricePerServing": 101.23,
+    "extendedIngredients": [
+        {
+            "id": 1022009,
+            "aisle": "Ethnic Foods;Spices and Seasonings",
+            "image": "chili-powder.jpg",
+            "consistency": "SOLID",
+            "name": "ancho chile powder",
+            "nameClean": "ancho chili powder",
+            "original": "1 teaspoon ancho chile powder (or other pure chile powder, not a blend)",
+            "originalName": "ancho chile powder (or other pure chile powder, not a blend)",
+            "amount": 1.0,
+            "unit": "teaspoon",
+            "meta": [
+                "pure",
+                "(or other chile powder, not a blend)"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "tsp",
+                    "unitLong": "teaspoon"
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "tsp",
+                    "unitLong": "teaspoon"
+                }
+            }
+        },
+        {
+            "id": 9037,
+            "aisle": "Produce",
+            "image": "avocado.jpg",
+            "consistency": "SOLID",
+            "name": "avocado",
+            "nameClean": "avocado",
+            "original": "1 avocado, sliced or cubed (optional)",
+            "originalName": "avocado, sliced or cubed (optional)",
+            "amount": 1.0,
+            "unit": "",
+            "meta": [
+                "cubed",
+                "sliced"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "",
+                    "unitLong": ""
+                }
+            }
+        },
+        {
+            "id": 16015,
+            "aisle": "Pasta and Rice;Canned and Jarred",
+            "image": "black-beans.jpg",
+            "consistency": "SOLID",
+            "name": "black beans",
+            "nameClean": "black beans",
+            "original": "1 15-ounce can black beans, rinsed and drained (about 1 1/2 cups)",
+            "originalName": "15-ounce can black beans, rinsed and drained (about",
+            "amount": 1.5,
+            "unit": "cups",
+            "meta": [
+                "rinsed",
+                "drained",
+                "canned"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.5,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 354.882,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 11124,
+            "aisle": "Produce",
+            "image": "sliced-carrot.png",
+            "consistency": "SOLID",
+            "name": "carrot",
+            "nameClean": "carrot",
+            "original": "1/2 cup grated carrot",
+            "originalName": "grated carrot",
+            "amount": 0.5,
+            "unit": "cup",
+            "meta": [
+                "grated"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 118.294,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 2009,
+            "aisle": "Spices and Seasonings",
+            "image": "chili-powder.jpg",
+            "consistency": "SOLID",
+            "name": "chile powder",
+            "nameClean": "chili powder",
+            "original": "1/4 teaspoon chipotle chile powder, or to taste",
+            "originalName": "chipotle chile powder, or to taste",
+            "amount": 0.25,
+            "unit": "teaspoon",
+            "meta": [
+                "to taste"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.25,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 1002014,
+            "aisle": "Spices and Seasonings",
+            "image": "ground-cumin.jpg",
+            "consistency": "SOLID",
+            "name": "cumin",
+            "nameClean": "cumin",
+            "original": "1/2 teaspoon cumin",
+            "originalName": "cumin",
+            "amount": 0.5,
+            "unit": "teaspoon",
+            "meta": [],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.5,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 11215,
+            "aisle": "Produce",
+            "image": "garlic.png",
+            "consistency": "SOLID",
+            "name": "garlic",
+            "nameClean": "garlic",
+            "original": "2 cloves garlic, minced",
+            "originalName": "garlic, minced",
+            "amount": 2.0,
+            "unit": "cloves",
+            "meta": [
+                "minced"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 2.0,
+                    "unitShort": "cloves",
+                    "unitLong": "cloves"
+                },
+                "metric": {
+                    "amount": 2.0,
+                    "unitShort": "cloves",
+                    "unitLong": "cloves"
+                }
+            }
+        },
+        {
+            "id": 12220,
+            "aisle": "Health Foods;Baking",
+            "image": "flax-seeds.png",
+            "consistency": "SOLID",
+            "name": "ground flaxseed",
+            "nameClean": "ground flaxseed",
+            "original": "1 teaspoon chia seeds or ground flaxseed",
+            "originalName": "chia seeds or ground flaxseed",
+            "amount": 1.0,
+            "unit": "teaspoon",
+            "meta": [],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "tsp",
+                    "unitLong": "teaspoon"
+                },
+                "metric": {
+                    "amount": 1.0,
+                    "unitShort": "tsp",
+                    "unitLong": "teaspoon"
+                }
+            }
+        },
+        {
+            "id": 11233,
+            "aisle": "Produce",
+            "image": "kale.jpg",
+            "consistency": "SOLID",
+            "name": "kale",
+            "nameClean": "kale",
+            "original": "4 – 6 cups chopped kale leaves (about 4-5 ounces)",
+            "originalName": "– 6 cups chopped kale leaves (about",
+            "amount": 4.0,
+            "unit": "ounces",
+            "meta": [
+                "chopped"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 4.0,
+                    "unitShort": "oz",
+                    "unitLong": "ounces"
+                },
+                "metric": {
+                    "amount": 113.398,
+                    "unitShort": "g",
+                    "unitLong": "grams"
+                }
+            }
+        },
+        {
+            "id": 9152,
+            "aisle": "Produce",
+            "image": "lemon-juice.jpg",
+            "consistency": "LIQUID",
+            "name": "lemon juice",
+            "nameClean": "lemon juice",
+            "original": "additional lemon juice and seasonings, to taste",
+            "originalName": "additional lemon juice and seasonings, to taste",
+            "amount": 6.0,
+            "unit": "servings",
+            "meta": [
+                "to taste"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 6.0,
+                    "unitShort": "servings",
+                    "unitLong": "servings"
+                },
+                "metric": {
+                    "amount": 6.0,
+                    "unitShort": "servings",
+                    "unitLong": "servings"
+                }
+            }
+        },
+        {
+            "id": 9160,
+            "aisle": "Produce",
+            "image": "lime-juice.png",
+            "consistency": "LIQUID",
+            "name": "lime juice",
+            "nameClean": "lime juice",
+            "original": "1/4 cup freshly squeezed lemon or lime juice",
+            "originalName": "freshly squeezed lemon or lime juice",
+            "amount": 0.25,
+            "unit": "cup",
+            "meta": [
+                "freshly squeezed"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.25,
+                    "unitShort": "cups",
+                    "unitLong": "cups"
+                },
+                "metric": {
+                    "amount": 59.147,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 20035,
+            "aisle": "Pasta and Rice;Health Foods",
+            "image": "uncooked-quinoa.png",
+            "consistency": "SOLID",
+            "name": "quinoa",
+            "nameClean": "quinoa",
+            "original": "1 cup quinoa, rinsed very well (I used a combo of red and white quinoa)",
+            "originalName": "quinoa, rinsed very well (I used a combo of red and white quinoa)",
+            "amount": 1.0,
+            "unit": "cup",
+            "meta": [
+                "white",
+                "red",
+                "rinsed",
+                "well",
+                "(I used a combo of and quinoa)"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 1.0,
+                    "unitShort": "cup",
+                    "unitLong": "cup"
+                },
+                "metric": {
+                    "amount": 236.588,
+                    "unitShort": "ml",
+                    "unitLong": "milliliters"
+                }
+            }
+        },
+        {
+            "id": 11821,
+            "aisle": "Produce",
+            "image": "red-pepper.jpg",
+            "consistency": "SOLID",
+            "name": "red bell pepper",
+            "nameClean": "red pepper",
+            "original": "1/2 red bell pepper, chopped",
+            "originalName": "red bell pepper, chopped",
+            "amount": 0.5,
+            "unit": "",
+            "meta": [
+                "red",
+                "chopped"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "",
+                    "unitLong": ""
+                },
+                "metric": {
+                    "amount": 0.5,
+                    "unitShort": "",
+                    "unitLong": ""
+                }
+            }
+        },
+        {
+            "id": 2047,
+            "aisle": "Spices and Seasonings",
+            "image": "salt.jpg",
+            "consistency": "SOLID",
+            "name": "salt",
+            "nameClean": "table salt",
+            "original": "1/2 tsp salt, or to taste (optional)",
+            "originalName": "salt, or to taste (optional)",
+            "amount": 0.5,
+            "unit": "tsp",
+            "meta": [
+                "to taste"
+            ],
+            "measures": {
+                "us": {
+                    "amount": 0.5,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                },
+                "metric": {
+                    "amount": 0.5,
+                    "unitShort": "tsps",
+                    "unitLong": "teaspoons"
+                }
+            }
+        },
+        {
+            "id": 6615,
+            "aisle": "Canned and Jarred",
+            "image": "chicken-broth.png",
+            "consistency": "LIQUID",
+            "name": "vegetable broth",
+            "nameClean": "vegetable stock",
+            "original": "3 tablespoons vegetable broth",
+            "originalName": "vegetable broth",
+            "amount": 3.0,
+            "unit": "tablespoons",
+            "meta": [],
+            "measures": {
+                "us": {
+                    "amount": 3.0,
+                    "unitShort": "Tbsps",
+                    "unitLong": "Tbsps"
+                },
+                "metric": {
+                    "amount": 3.0,
+                    "unitShort": "Tbsps",
+                    "unitLong": "Tbsps"
+                }
+            }
+        }
+    ],
+    "id": 592479,
+    "title": "Kale and Quinoa Salad with Black Beans",
+    "readyInMinutes": 50,
+    "servings": 6,
+    "sourceUrl": "http://blog.fatfreevegan.com/2013/06/kale-and-quinoa-salad-with-black-beans.html",
+    "openLicense": -1,
+    "image": "https://spoonacular.com/recipeImages/592479-556x370.jpg",
+    "imageType": "jpg",
+    "summary": "You can never have too many side dish recipes, so give Kale and Quinoa Salad with Black Beans a try. One serving contains <b>242 calories</b>, <b>10g of protein</b>, and <b>7g of fat</b>. This gluten free and vegan recipe serves 6 and costs <b>$1.03 per serving</b>. A mixture of salt, vegetable broth, carrot, and a handful of other ingredients are all it takes to make this recipe so tasty. This recipe is liked by 50076 foodies and cooks. From preparation to the plate, this recipe takes roughly <b>50 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 100%</b>. This score is tremendous. Try <a href=\"https://spoonacular.com/recipes/skip-the-rice-and-try-quinoa-mexican-quinoa-salad-with-black-beans-and-corn-530227\">Skip the Rice and Try Quinoa – Mexican Quinoa Salad with Black Beans and Corn</a>, <a href=\"https://spoonacular.com/recipes/black-quinoa-kale-salad-15436\">Black Quinoa & Kale Salad</a>, and <a href=\"https://spoonacular.com/recipes/black-quinoa-kale-salad-42466\">Black Quinoa & Kale Salad</a> for similar recipes.",
+    "cuisines": [],
+    "dishTypes": [
+        "side dish"
+    ],
+    "diets": [
+        "gluten free",
+        "dairy free",
+        "lacto ovo vegetarian",
+        "vegan"
+    ],
+    "occasions": [],
+    "winePairing": {},
+    "instructions": "Instructions  Heat a saucepan. Add the rinsed and drained quinoa and the garlic and toast it until almost dry. Add the vegetable broth, bring to a boil, reduce heat, and cover. Simmer until all the water is absorbed, about 20 minutes. Remove from heat and allow to cool. While the quinoa is cooking, make the dressing in a small bowl or measuring cup: whisk together the lemon juice, 3 tablespoons broth, chia/flax seeds, chile powders, cumin, and salt. Allow to stand until the chia seeds start to thicken the dressing. Place the kale in a large serving bowl. Add half of the dressing and massage it into the kale using a wringing motion until the kale is very tender. Two minutes of massaging should do it, but the longer, the better. Add the quinoa, black beans, carrot, and bell pepper, along with the remaining dressing. Mix well and refrigerate until ready to serve. Just before serving, check the seasoning and add more lemon juice, chile powder, cumin, and salt, as needed. Stir in chopped avocado, if desired, or serve with slices of avocado on the side.",
+    "analyzedInstructions": [
+        {
+            "name": "",
+            "steps": [
+                {
+                    "number": 1,
+                    "step": "Heat a saucepan.",
+                    "ingredients": [],
+                    "equipment": [
+                        {
+                            "id": 404669,
+                            "name": "sauce pan",
+                            "localizedName": "sauce pan",
+                            "image": "sauce-pan.jpg"
+                        }
+                    ]
+                },
+                {
+                    "number": 2,
+                    "step": "Add the rinsed and drained quinoa and the garlic and toast it until almost dry.",
+                    "ingredients": [
+                        {
+                            "id": 11215,
+                            "name": "garlic",
+                            "localizedName": "garlic",
+                            "image": "garlic.png"
+                        },
+                        {
+                            "id": 20035,
+                            "name": "quinoa",
+                            "localizedName": "quinoa",
+                            "image": "uncooked-quinoa.png"
+                        },
+                        {
+                            "id": 18070,
+                            "name": "toast",
+                            "localizedName": "toast",
+                            "image": "toast"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 3,
+                    "step": "Add the vegetable broth, bring to a boil, reduce heat, and cover. Simmer until all the water is absorbed, about 20 minutes.",
+                    "ingredients": [
+                        {
+                            "id": 6615,
+                            "name": "vegetable broth",
+                            "localizedName": "vegetable broth",
+                            "image": "chicken-broth.png"
+                        },
+                        {
+                            "id": 14412,
+                            "name": "water",
+                            "localizedName": "water",
+                            "image": "water.png"
+                        }
+                    ],
+                    "equipment": [],
+                    "length": {
+                        "number": 20,
+                        "unit": "minutes"
+                    }
+                },
+                {
+                    "number": 4,
+                    "step": "Remove from heat and allow to cool. While the quinoa is cooking, make the dressing in a small bowl or measuring cup: whisk together the lemon juice, 3 tablespoons broth, chia/flax seeds, chile powders, cumin, and salt. Allow to stand until the chia seeds start to thicken the dressing.",
+                    "ingredients": [
+                        {
+                            "id": 9152,
+                            "name": "lemon juice",
+                            "localizedName": "lemon juice",
+                            "image": "lemon-juice.jpg"
+                        },
+                        {
+                            "id": 12006,
+                            "name": "chia seeds",
+                            "localizedName": "chia seeds",
+                            "image": "chia-seeds.jpg"
+                        },
+                        {
+                            "id": 10012220,
+                            "name": "flaxseed",
+                            "localizedName": "flaxseed",
+                            "image": "flax-seeds.png"
+                        },
+                        {
+                            "id": 20035,
+                            "name": "quinoa",
+                            "localizedName": "quinoa",
+                            "image": "uncooked-quinoa.png"
+                        },
+                        {
+                            "id": 1006615,
+                            "name": "broth",
+                            "localizedName": "broth",
+                            "image": "chicken-broth.png"
+                        },
+                        {
+                            "id": 11819,
+                            "name": "chili pepper",
+                            "localizedName": "chili pepper",
+                            "image": "red-chili.jpg"
+                        },
+                        {
+                            "id": 1002014,
+                            "name": "cumin",
+                            "localizedName": "cumin",
+                            "image": "ground-cumin.jpg"
+                        },
+                        {
+                            "id": 2047,
+                            "name": "salt",
+                            "localizedName": "salt",
+                            "image": "salt.jpg"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404766,
+                            "name": "measuring cup",
+                            "localizedName": "measuring cup",
+                            "image": "measuring-cup.jpg"
+                        },
+                        {
+                            "id": 404661,
+                            "name": "whisk",
+                            "localizedName": "whisk",
+                            "image": "whisk.png"
+                        },
+                        {
+                            "id": 404783,
+                            "name": "bowl",
+                            "localizedName": "bowl",
+                            "image": "bowl.jpg"
+                        }
+                    ]
+                },
+                {
+                    "number": 5,
+                    "step": "Place the kale in a large serving bowl.",
+                    "ingredients": [
+                        {
+                            "id": 11233,
+                            "name": "kale",
+                            "localizedName": "kale",
+                            "image": "kale.jpg"
+                        }
+                    ],
+                    "equipment": [
+                        {
+                            "id": 404783,
+                            "name": "bowl",
+                            "localizedName": "bowl",
+                            "image": "bowl.jpg"
+                        }
+                    ]
+                },
+                {
+                    "number": 6,
+                    "step": "Add half of the dressing and massage it into the kale using a wringing motion until the kale is very tender. Two minutes of massaging should do it, but the longer, the better.",
+                    "ingredients": [
+                        {
+                            "id": 11233,
+                            "name": "kale",
+                            "localizedName": "kale",
+                            "image": "kale.jpg"
+                        }
+                    ],
+                    "equipment": [],
+                    "length": {
+                        "number": 2,
+                        "unit": "minutes"
+                    }
+                },
+                {
+                    "number": 7,
+                    "step": "Add the quinoa, black beans, carrot, and bell pepper, along with the remaining dressing.",
+                    "ingredients": [
+                        {
+                            "id": 10211821,
+                            "name": "bell pepper",
+                            "localizedName": "bell pepper",
+                            "image": "bell-pepper-orange.png"
+                        },
+                        {
+                            "id": 16015,
+                            "name": "black beans",
+                            "localizedName": "black beans",
+                            "image": "black-beans.jpg"
+                        },
+                        {
+                            "id": 11124,
+                            "name": "carrot",
+                            "localizedName": "carrot",
+                            "image": "sliced-carrot.png"
+                        },
+                        {
+                            "id": 20035,
+                            "name": "quinoa",
+                            "localizedName": "quinoa",
+                            "image": "uncooked-quinoa.png"
+                        }
+                    ],
+                    "equipment": []
+                },
+                {
+                    "number": 8,
+                    "step": "Mix well and refrigerate until ready to serve. Just before serving, check the seasoning and add more lemon juice, chile powder, cumin, and salt, as needed. Stir in chopped avocado, if desired, or serve with slices of avocado on the side.",
+                    "ingredients": [
+                        {
+                            "id": 2009,
+                            "name": "chili powder",
+                            "localizedName": "chili powder",
+                            "image": "chili-powder.jpg"
+                        },
+                        {
+                            "id": 9152,
+                            "name": "lemon juice",
+                            "localizedName": "lemon juice",
+                            "image": "lemon-juice.jpg"
+                        },
+                        {
+                            "id": 1042027,
+                            "name": "seasoning",
+                            "localizedName": "seasoning",
+                            "image": "seasoning.png"
+                        },
+                        {
+                            "id": 9037,
+                            "name": "avocado",
+                            "localizedName": "avocado",
+                            "image": "avocado.jpg"
+                        },
+                        {
+                            "id": 1002014,
+                            "name": "cumin",
+                            "localizedName": "cumin",
+                            "image": "ground-cumin.jpg"
+                        },
+                        {
+                            "id": 2047,
+                            "name": "salt",
+                            "localizedName": "salt",
+                            "image": "salt.jpg"
+                        }
+                    ],
+                    "equipment": []
+                }
+            ]
+        }
+    ],
+    "originalId": null
+}

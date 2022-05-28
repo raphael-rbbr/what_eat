@@ -1,7 +1,7 @@
 class Intolerance < ApplicationRecord
   belongs_to :user
 
-  enum type: {
+  enum intolerance_type: {
     dairy: 0,
     egg: 1,
     gluten: 2,

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_145519) do
 
   create_table "diets", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "type"
+    t.integer "diet_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_diets_on_user_id"
@@ -33,18 +33,20 @@ ActiveRecord::Schema.define(version: 2022_05_28_145519) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.bigint "recipe_id", null: false
+    t.bigint "meal_id", null: false
     t.bigint "groceries_list_id", null: false
+    t.string "name"
     t.string "quantity"
     t.text "description"
+    t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["groceries_list_id"], name: "index_ingredients_on_groceries_list_id"
-    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
+    t.index ["meal_id"], name: "index_ingredients_on_meal_id"
   end
 
   create_table "intolerances", force: :cascade do |t|
-    t.integer "type"
+    t.integer "intolerance_type"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -70,9 +72,10 @@ ActiveRecord::Schema.define(version: 2022_05_28_145519) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.string "title"
+    t.text "instructions"
     t.string "prep_time"
+    t.integer "servings"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -97,7 +100,7 @@ ActiveRecord::Schema.define(version: 2022_05_28_145519) do
   add_foreign_key "groceries_lists", "plans"
   add_foreign_key "groceries_lists", "users"
   add_foreign_key "ingredients", "groceries_lists"
-  add_foreign_key "ingredients", "recipes"
+  add_foreign_key "ingredients", "meals"
   add_foreign_key "intolerances", "users"
   add_foreign_key "meals", "plans"
   add_foreign_key "meals", "recipes"
