@@ -65,8 +65,8 @@ http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
 request_list = Net::HTTP::Get.new(url_list)
-request_list["X-RapidAPI-Host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-request_list["X-RapidAPI-Key"] = '8ef426af45msh41e716462eeeb6dp1173a3jsn61455848d5cf'
+request_list["X-RapidAPI-Host"] = ENV['RECIPE_API_HOST']
+request_list["X-RapidAPI-Key"] = ENV['RECIPE_API_KEY']
 
 response_list = http.request(request_list).read_body
 list = JSON.parse(response_list)
@@ -83,8 +83,8 @@ list["results"].each do |r|
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
   request = Net::HTTP::Get.new(url)
-  request["X-RapidAPI-Host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-  request["X-RapidAPI-Key"] = '8ef426af45msh41e716462eeeb6dp1173a3jsn61455848d5cf'
+  request["X-RapidAPI-Host"] = ENV['RECIPE_API_HOST']
+  request["X-RapidAPI-Key"] = ENV['RECIPE_API_KEY']
 
   response = http.request(request).read_body
   recipe = JSON.parse(response)
