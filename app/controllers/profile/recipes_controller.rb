@@ -1,15 +1,15 @@
-class Profile::MealsController < ApplicationController
+class Profile::RecipesController < ApplicationController
   before_action :set_user
 
   def index
-    # @meals = @user.meals
+    # @recipes = @user.recipes
     # authorize @user
-    # @meals = policy_scope(Meal).order(created_at: :desc)
-    # authorize @meals
+    # @recipes = policy_scope(Recipe).order(created_at: :desc)
+    # authorize @recipes
   end
 
   def show
-    # @meals = @user.meals
+    # @recipes = @user.recipes
     # authorize @user
   end
 
