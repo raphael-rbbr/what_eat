@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :groceries_lists
   has_many :recipes, dependent: :destroy
   has_one :diet
+  has_one_attached :profile_photo
 end
