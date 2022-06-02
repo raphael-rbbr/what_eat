@@ -102,7 +102,7 @@ list["results"].each do |r|
                  user_id: User.last.id,
   )
 
-  Recipe.last.meal_photo.attach(io: file, filename: 'meal.png', content_type: 'image/png')
+  Recipe.last.recipe_photo.attach(io: file, filename: 'meal.png', content_type: 'image/png')
 
   puts "Recipe created: #{Recipe.last.id} - #{Recipe.last.title}"
 
