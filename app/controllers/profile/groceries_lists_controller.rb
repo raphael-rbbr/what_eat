@@ -16,4 +16,20 @@ class Profile::GroceriesListsController < ApplicationController
     params.require(:user).permit(:id, :email, :name)
   end
 
+  def set_meals
+    @meals = @user.meals
+  end
+
+  def set_recipes
+    @recipes = @meals.each do |meal|
+      meal.recipes
+    end
+  end
+
+  def set_ingredients
+    @ingredients = @recipes.each do |recipe|
+      recipe.ingredients
+    end
+  end
+
 end
