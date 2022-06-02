@@ -31,6 +31,10 @@ User.create!(email: "nicholas@gmail.com",
              password: "123456")
 puts "User created: #{User.last.email}, password 123456"
 
+profile_file = URI.open('https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687')
+User.last.profile_photo.attach(io: profile_file, filename: 'user.png', content_type: 'image/png')
+
+
 Diet.create!(user_id: User.last.id,
              diet_type: 7
 )
@@ -89,13 +93,17 @@ list["results"].each do |r|
   response = http.request(request).read_body
   recipe = JSON.parse(response)
 
+  file = URI.open(recipe["image"])
+
   Recipe.create!(title: recipe["title"],
                  instructions: recipe["instructions"],
                  prep_time: recipe["readyInMinutes"],
                  servings: recipe["servings"],
-                 user_id: User.last.id
-                 # image: recipe["image"]
+                 user_id: User.last.id,
   )
+
+  Recipe.last.meal_photo.attach(io: file, filename: 'meal.png', content_type: 'image/png')
+
   puts "Recipe created: #{Recipe.last.id} - #{Recipe.last.title}"
 
   Meal.create!(plan_id: Plan.last.id,
@@ -114,17 +122,3 @@ list["results"].each do |r|
     puts "Ingredient created: #{Ingredient.last.id} - #{Ingredient.last.name}"
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-# file = URI.open('https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687')
-# user.profile_photo.attach(io: file, filename: 'user.png', content_type: 'image/png')

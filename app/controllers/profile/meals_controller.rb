@@ -1,5 +1,5 @@
 class Profile::MealsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, :set_recipe
 
   def index
     @user.meals
@@ -16,6 +16,11 @@ class Profile::MealsController < ApplicationController
     @meal.recipe = @recipe
     @meal.save
     authorize @meal
+  end
+
+  # change this later from recipes to meals
+  def index
+    @recipes = @user.recipes
   end
 
   private
@@ -37,7 +42,6 @@ class Profile::MealsController < ApplicationController
   end
 
   def recipe_params
-    params.require(:user).permit(:id, :title, :instructions, :prep_time, :servings)
+    params.require(:recipe).permit(:id, :title, :instructions, :prep_time, :servings, :meal_photo)
   end
-
 end
