@@ -5,6 +5,12 @@ class Profile::MealsController < ApplicationController
     @user.meals
   end
 
+  def show
+    set_recipe
+    @meal = @recipe.meals
+    # authorize @meal
+  end
+
   def new
     @meal = Meal.new
     authorize @meal
@@ -19,18 +25,6 @@ class Profile::MealsController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = current_user
-  end
-
-  def set_plan
-    # @user = current_user
-  end
-
-  def plan_params
-    # params.require(:user).permit(:id, :email, :name)
-  end
 
   def set_user
     @user = current_user
