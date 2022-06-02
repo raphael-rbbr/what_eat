@@ -1,5 +1,13 @@
+<%=@user.id%>
+<%=@user.meals%>
+
 <h1>Página Index-Meals</h1>
+
+<%=link_to "home", root_path%>
+
+<%=link_to "groce", profile_groceries_list_path(@user)%>
 
 <% @recipes.each do |recipe| %>
   <%= cl_image_tag recipe.meal_photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
