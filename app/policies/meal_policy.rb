@@ -10,4 +10,8 @@ class MealPolicy < ApplicationPolicy
     true
   end
 
+  def index?
+    true
+  end
+
 end
