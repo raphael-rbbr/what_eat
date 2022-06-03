@@ -1,9 +1,9 @@
-class Profile::MealsController < ApplicationController
-  before_action :set_user
+class Profile::PlansController < ApplicationController
+  efore_action :set_user
   # before_action :set_recipe
 
   def index
-    @meals = @user.meals
+    @plan = Plan.where(:start_date < Date.now < :final_date)
   end
 
   def new
