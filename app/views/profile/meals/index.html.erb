@@ -7,13 +7,14 @@
 <div class="profile-container">
 
   <div class="timetable-card">
-
-
+    <%= render "timetable" %>
   </div>
 
-  <div class="meals-card">
+  <div class="meals-card" data-controller="drag-item">
     <% @user.meals.each do |meal| %>
-      <%= cl_image_tag meal.recipe.recipe_photo.key, height: 300, width: 400, crop: :fill %>
+      <div>
+        <%= cl_image_tag meal.recipe.recipe_photo.key, height: 150, width: 200, crop: :fill %>
+      </div>
     <% end %>
   </div>
 
