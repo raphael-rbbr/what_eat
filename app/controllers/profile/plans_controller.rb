@@ -1,14 +1,9 @@
-class Profile::MealsController < ApplicationController
-  before_action :set_user, :set_recipe
+class Profile::PlansController < ApplicationController
+  efore_action :set_user
+  # before_action :set_recipe
 
   def index
-    @meals = @user.meals
-  end
-
-  def show
-    set_recipe
-    @meal = @recipe.meals
-    # authorize @meal
+    @plan = Plan.where(:start_date < Date.now < :final_date)
   end
 
   def new
@@ -35,8 +30,12 @@ class Profile::MealsController < ApplicationController
     @user = current_user
   end
 
-  def user_params
-    params.require(:user).permit(:id, :email, :name)
+  def set_plan
+    # @user = current_user
+  end
+
+  def plan_params
+    # params.require(:user).permit(:id, :email, :name)
   end
 
   def set_recipe
@@ -44,6 +43,6 @@ class Profile::MealsController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:id, :title, :instructions, :prep_time, :servings, :recipe_photo)
+    params.require(:recipe).permit(:id, :title, :instructions, :prep_time, :servings, :meal_photo)
   end
 end
