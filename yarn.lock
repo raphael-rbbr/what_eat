@@ -6218,6 +6218,11 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
+sortablejs@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.15.0.tgz#53230b8aa3502bb77a29e2005808ffdb4a5f7e2a"
+  integrity sha512-bv9qgVMjUMf89wAvM6AxVvS/4MX3sPeN0+agqShejLU5z5GX4C75ow1O2e5k4L6XItUyAK3gH6AxSbXrOM5e8w==
+
 source-list-map@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
@@ -6345,6 +6350,11 @@ statuses@2.0.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+
+stimulus-sortable@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/stimulus-sortable/-/stimulus-sortable-3.2.0.tgz#16927f72b22d8e103a0102b2ed52a502d708fff7"
+  integrity sha512-hA1/jggRIOy7UK+BsKRNzfFNguWKo8yD64Oi6Y/n9qELm+G5sE4buuMK8ebAIU01kL5w8jGalPnpKAQkX/q9ZA==
 
 stimulus@^3.0.1:
   version "3.0.1"
