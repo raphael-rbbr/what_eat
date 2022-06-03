@@ -6,14 +6,23 @@
 
 <div class="profile-container">
 
-  <div class="timetable-card">
+  <%# <ol data-controller="drag-item" data-action="dragstart->drag-item#dragstart dragover->drag-item#dragover dragenter->drag-item#dragenter drop->drag-item#drop dragend->drag-item#dragend">>
+      <li draggable="true" data-todo-id="1">Take out trash</li>
+      <li draggable="true" data-todo-id="2">Check Email</li>
+      <li draggable="true" data-todo-id="3">Subscribe to mailing list</li>
+      <li draggable="true" data-todo-id="4">Research Stimulus</li>
+  </ol> %>
 
-
+  <div class="timetable-card" data-controller="drag-item" data-action="dragstart->drag-item#dragstart dragover->drag-item#dragover dragenter->drag-item#dragenter drop->drag-item#drop dragend->drag-item#dragend">
+    <%= render "timetable" %>
   </div>
 
-  <div class="meals-card">
+  <div class="meals-card" data-controller="drag-item">
+  <%# data-action="dragstart->drag-item#dragstart dragover->drag-item#dragover dragenter->drag-item#dragenter drop->drag-item#drop dragend->drag-item#dragend" %>
     <% @user.meals.each do |meal| %>
-      <%= cl_image_tag meal.recipe.recipe_photo.key, height: 300, width: 400, crop: :fill %>
+      <div>
+        <%= cl_image_tag meal.recipe.recipe_photo.key, height: 150, width: 200, crop: :fill %>
+      </div>
     <% end %>
   </div>
 
