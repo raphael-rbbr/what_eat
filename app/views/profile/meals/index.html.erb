@@ -1,5 +1,20 @@
 <h1>Página Index-Meals</h1>
 
-<% @recipes.each do |recipe| %>
-  <%= cl_image_tag recipe.meal_photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<%=link_to "home", root_path%>
+
+<%=link_to "Groceries List", profile_groceries_list_path(@user)%>
+
+<div class="profile-container">
+
+  <div class="timetable-card">
+
+
+  </div>
+
+  <div class="meals-card">
+    <% @user.meals.each do |meal| %>
+      <%= cl_image_tag meal.recipe.recipe_photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+
+</div>
