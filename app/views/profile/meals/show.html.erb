@@ -1,1 +1,26 @@
 <h1>Página Show-Meals</h1>
+
+<div class="card-meal">
+  <%= cl_image_tag @recipe.recipe_photo.key, height: 300, width: 400, crop: :fill %>
+
+  <div class="card-meal-info">
+    <h2><%= @recipe.title %></h2>
+    <p>Preparation: <%= @recipe.prep_time %> minutes</p>
+    <p>Servings: <%= @recipe.servings %></p>
+
+    <div class="card-meal-details">
+
+      <div class="card-meal-ingredients" >
+        <h3>Ingredients</h3>
+        <% @meal[0].ingredients.each do |i| %>
+          <li><%= i.description %></li>
+        <% end %>
+      </div>
+
+      <div class="card-meal-instructions" >
+        <h3>Instructions</h3>
+        <p><%= @recipe.instructions %></p>
+      </div>
+    </div>
+  </div>
+</div>
