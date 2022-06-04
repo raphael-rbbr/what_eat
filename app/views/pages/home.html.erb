@@ -1,49 +1,40 @@
 <div class="body-container">
-  <div class="header-nohero">
-  </div>
-  <div class="home-text-box-background">
-   <div class="home-text-box-container">
-     <div class="home-text-box">
-       <div class="home-banner-title">
+  <div class="home-banner">
+    <div class="home-title-box">
+      <div class="home-banner-title">
         <h1>What Eat</h1>
-       </div>
-       <div class="home-banner-text">
-        <p>This is a descriptive text of whatever amazing thing it is that our app does and how, as well as why should people use it. Lorem ipsum dolor sit amet, etc etc bla bla bla. I'm just writing a bunch of things so that we can have plenty of text here and understand how this card is finally going to look like in the end.</p>
       </div>
-       <div class="login-button">
-        <a>Login</a>
-       </div>
-       <div class="signup-button">
-       <a>Sign Up</a>
+      <div class="home-banner-subtitle">
+        <div class="home-banner-subtitle-text">
+          <h2>The #1 tool</h2>
+          <h2>to plan all</h2>
+          <h2>your meals</h2>
+        </div>
+        <div class="home-banner-subtitle-img">
+          <%= image_tag("forkspoon.png", width: '240', align: 'center', alt: "Fork and spoon", class: 'logo-symbol' ) %>
+        </div>
       </div>
-      </div>
+    </div>
+    <div class="home-button-box">
     </div>
   </div>
   <div class="home-subtitle">
-    <h1>Check out some of our recipes:</h1>
+    <h3>Check out some of our recipes:</h3>
   </div>
   <div class="recipe-home-cards-container">
     <div class="recipe-home-cards-line">
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
-     <div class="recipe-home-card">
-     </div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
+      <div class="recipe-home-card"></div>
     </div>
   </div>
-  <br>
-  <br>
 </div>
+<br>
+<br>
 
 <%=link_to "profile", profile_meals_path%>
