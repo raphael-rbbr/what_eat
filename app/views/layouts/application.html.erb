@@ -13,20 +13,9 @@
   </head>
 
   <body>
-    <div class>
-      <div class= "navbar">
-          <%= render 'shared/navbar' %>
-      </div>
-      <div>
-        <%= render 'shared/flashes' %>
-        <div class= "pages mt-5">
-          <%= yield %>
-        </div>
-      </div>
-
-      <div clas="footer">
-        <%= render 'shared/footer' %>
-      </div>
-    </div>
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
+  <%= yield %>
+  <%= render 'shared/footer' %>
   </body>
 </html>
