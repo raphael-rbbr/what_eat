@@ -1,5 +1,5 @@
 class Profile::MealsController < ApplicationController
-  before_action :set_user, :set_recipe
+  before_action :set_user,
 
   def index
     @meals = @user.meals
@@ -8,7 +8,7 @@ class Profile::MealsController < ApplicationController
   def show
     set_recipe
     @meal = @recipe.meals
-    # authorize @meal
+    authorize @meal
   end
 
   def new
