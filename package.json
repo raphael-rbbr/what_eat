@@ -1,6 +1,5 @@
 {
   "name": "what-eats",
-  "start": "node index.js",
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
