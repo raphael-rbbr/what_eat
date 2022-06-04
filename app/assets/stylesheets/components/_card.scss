@@ -32,6 +32,10 @@
     h4 {
       font-size: 1rem;
     }
+    &:hover{
+      box-shadow: 0 10px 15px 0;
+      transform: scale(1.05);
+    }
 }
 
 .timetable-card .list-group-item {
@@ -51,7 +55,7 @@
       bottom: 5%;
     }
     h4 {
-      font-size: 1rem;
+      font-size: 0.75rem;
     }
 }
 

@@ -12,7 +12,9 @@
       <%= render "timetable" %>
     </div>
 
-    <h1> Selected Meals for You! </h1>
+    <div>
+      <h1><strong> Selected Meals for You! </strong></h1>
+    </div>
 
     <div class="meal-card" data-controller="drag-item">
       <% @user.meals.each do |meal| %>
