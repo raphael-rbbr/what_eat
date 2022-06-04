@@ -6,11 +6,11 @@
 .home-banner{
   display: flex;
   max-width: 1200px;
-  padding: 0 32px;
   text-align: left;
   background-color: #E05A47;
   border-left: 4px solid #004AAD;
   margin: 60px auto;
+  justify-content: space-between;
 }
 
 .home-title-box{
@@ -18,7 +18,7 @@
   flex-direction: column;
   max-width: 600px;
   text-align: left;
-  padding: 24px;
+  margin-left: 56px;
 }
 
 .home-banner-title{
@@ -48,8 +48,22 @@
 
 .home-button-box {
   display: flex;
-  max-width: 600px;
-  padding: 24px;
+  flex-direction: column;
+  background-color: #FFFFF3;
+  border-radius: 40px;
+  width: 560px;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.home-button-box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.home-button-box-buttons {
+  display: flex;
 }
 
 .home-subtitle {
