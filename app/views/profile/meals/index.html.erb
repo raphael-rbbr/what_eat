@@ -1,6 +1,4 @@
 <h1>Página Index-Meals</h1>
-<%=@user.id%>
-<%=@user.meals%>
 
 <%=link_to "home", root_path%>
 
@@ -12,16 +10,17 @@
     <%= render "timetable" %>
   </div>
 
-<% @meals.each do |meal| %>
-  <%= cl_image_tag meal.meal_photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-  <div class="meals-card" data-controller="drag-item">
-    <% @user.meals.each do |meal| %>
-      <div>
-        <%= cl_image_tag meal.recipe.recipe_photo.key, height: 150, width: 200, crop: :fill %>
+  <div class="meals-cards">
+    <div class="meal-card" data-controller="drag-item">
+      <% @user.meals.each do |meal| %>
+        <div class="list-group-item">
+        <%= cl_image_tag meal.recipe.recipe_photo.key, class:"meal-img" %>
+          <div class="meal-card-text">
+            <h4><strong><%= meal.recipe.title %> • <%= meal.recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
+            <%# <p class="overflow-ellipsis"><%= movie.overview</p> %>
+          </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
 </div>
