@@ -14,3 +14,6 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+//= require jquery
+//= require bootstrap-sprockets
