@@ -8,17 +8,20 @@
     <p>Preparation: <%= @recipe.prep_time %> minutes</p>
     <p>Servings: <%= @recipe.servings %></p>
 
-    <div class="card-meal-details">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-ingredients-tab" data-toggle="tab" href="#nav-ingredients" role="tab" aria-controls="nav-ingredients" aria-selected="true">Ingredients</a>
+        <a class="nav-item nav-link" id="nav-instructions-tab" data-toggle="tab" href="#nav-instructions" role="tab" aria-controls="nav-instructions" aria-selected="false">Instructions</a>
+      </div>
+    </nav>
 
-      <div class="card-meal-ingredients" >
-        <h3>Ingredients</h3>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-ingredients" role="tabpanel" aria-labelledby="nav-ingredients-tab">
         <% @meal[0].ingredients.each do |i| %>
           <li><%= i.description %></li>
         <% end %>
       </div>
-
-      <div class="card-meal-instructions" >
-        <h3>Instructions</h3>
+      <div class="tab-pane fade" id="nav-instructions" role="tabpanel" aria-labelledby="nav-instructions-tab">
         <p><%= @recipe.instructions %></p>
       </div>
     </div>
