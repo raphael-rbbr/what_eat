@@ -1,6 +1,4 @@
 <h1>Página Index-Meals</h1>
-<%=@user.id%>
-<%=@user.meals%>
 
 <%=link_to "home", root_path%>
 
@@ -11,10 +9,6 @@
   <div class="timetable-card">
     <%= render "timetable" %>
   </div>
-
-<% @meals.each do |meal| %>
-  <%= cl_image_tag meal.meal_photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 
   <div class="meals-card" data-controller="drag-item">
     <% @user.meals.each do |meal| %>
