@@ -1,4 +1,4 @@
-<h1>Página Index-Meals</h1>
+<h1>Página Index-Plan</h1>
 
 <%=link_to "home", root_path%>
 
@@ -6,11 +6,16 @@
 
 <div class="profile-container">
 
-  <div class="timetable-card">
-    <%= render "timetable" %>
-  </div>
-
   <div class="meals-cards">
+
+    <div class="timetable-card">
+      <%= render "timetable" %>
+    </div>
+
+    <div>
+      <h1><strong> Selected Meals for You! </strong></h1>
+    </div>
+
     <div class="meal-card" data-controller="drag-item">
       <% @user.meals.each do |meal| %>
         <div class="list-group-item">
@@ -23,4 +28,5 @@
       <% end %>
     </div>
   </div>
+
 </div>

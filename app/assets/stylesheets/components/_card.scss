@@ -30,7 +30,32 @@
       bottom: 5%;
     }
     h4 {
-      font-size: 100%;
+      font-size: 1rem;
+    }
+    &:hover{
+      box-shadow: 0 10px 15px 0;
+      transform: scale(1.05);
+    }
+}
+
+.timetable-card .list-group-item {
+  // margin: 2%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 100px;
+  width: 150px;
+  padding: 0;
+  // text-align: left;
+    p {
+      color: grey;
+      width: 100%;
+      height: 45px;
+      overflow: hidden;
+    }
+    a {
+      bottom: 5%;
+    }
+    h4 {
+      font-size: 0.75rem;
     }
 }
 
@@ -39,7 +64,7 @@
     height: 360px;
   }
     h4 {
-      font-size: 120%;
+      font-size: 1rem;
     }
 }
 
@@ -55,3 +80,16 @@
   height: 50%;
   object-fit: cover;
 }
+
+.list-group-item .meal-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+  .list-group-item .meal-card-text {
+    padding: 4%;
+    text-align: left;
+    height: 20%;
+    object-fit: cover;
+  }
