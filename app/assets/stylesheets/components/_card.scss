@@ -93,3 +93,28 @@
     height: 20%;
     object-fit: cover;
   }
+
+  .new-lists {
+    display: grid;
+    flex-grow: 1;
+    margin: 20px;
+    background-color: hsl(0, 0%, 98%);
+    padding: 5%;
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137);
+    border-radius: 4px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  @media (min-width: 100px) and (max-width: 790px) {
+    .new-lists {
+      grid-template-columns: 1fr;
+      width: 90%;
+      h1 {
+            font-size: 200%;
+      }
+    }
+  }
