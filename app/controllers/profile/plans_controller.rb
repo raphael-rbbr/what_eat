@@ -1,5 +1,5 @@
 class Profile::PlansController < ApplicationController
-  efore_action :set_user
+  before_action :set_user
   # before_action :set_recipe
 
   def index
