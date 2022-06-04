@@ -1,8 +1,8 @@
 class Profile::MealsController < ApplicationController
-  before_action :set_user, :set_recipe
+  before_action :set_user
 
   def index
-    @meals = @user.meals
+    @user.meals
   end
 
   def show
@@ -23,11 +23,6 @@ class Profile::MealsController < ApplicationController
     @meal.save
     authorize @meal
   end
-
-  # change this later from recipes to meals
-  # def index
-  #   @recipes = @user.recipes
-  # end
 
   private
 
