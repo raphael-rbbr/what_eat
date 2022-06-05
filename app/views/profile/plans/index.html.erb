@@ -1,10 +1,10 @@
-<h1>Página Index-Plan</h1>
-
-<%=link_to "home", root_path%>
-
-<%=link_to "Groceries List", profile_groceries_list_path(@user)%>
-
 <div class="profile-container">
+
+  <h3>Página Index-Plan</h3>
+
+  <%=link_to "home", root_path%>
+
+  <%=link_to "Groceries List", profile_groceries_list_path(@user)%>
 
   <div class="meals-cards">
 
@@ -13,7 +13,7 @@
     </div>
 
     <div>
-      <h1><strong> Selected Meals for You! </strong></h1>
+      <h3><strong> Selected Meals for You! </strong></h3>
     </div>
 
     <div class="meal-card" data-controller="drag-item">
