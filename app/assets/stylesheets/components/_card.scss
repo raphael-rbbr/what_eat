@@ -1,6 +1,7 @@
 .meals-cards {
-  display: grid;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
   width: 80%;
   margin-top: 3%;
@@ -9,7 +10,7 @@
 
 .meal-card {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: 2%;
 }
 
@@ -30,7 +31,32 @@
       bottom: 5%;
     }
     h4 {
-      font-size: 100%;
+      font-size: 1rem;
+    }
+    &:hover{
+      box-shadow: 0 10px 15px 0;
+      transform: scale(1.05);
+    }
+}
+
+.timetable-card .list-group-item {
+  // margin: 2%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 100px;
+  width: 150px;
+  padding: 0;
+  // text-align: left;
+    p {
+      color: grey;
+      width: 100%;
+      height: 45px;
+      overflow: hidden;
+    }
+    a {
+      bottom: 5%;
+    }
+    h4 {
+      font-size: 0.75rem;
     }
 }
 
@@ -39,7 +65,7 @@
     height: 360px;
   }
     h4 {
-      font-size: 120%;
+      font-size: 1rem;
     }
 }
 
@@ -55,3 +81,41 @@
   height: 50%;
   object-fit: cover;
 }
+
+.list-group-item .meal-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+  .list-group-item .meal-card-text {
+    padding: 4%;
+    text-align: left;
+    height: 20%;
+    object-fit: cover;
+  }
+
+  .new-lists {
+    display: grid;
+    flex-grow: 1;
+    margin: 20px;
+    background-color: hsl(0, 0%, 98%);
+    padding: 5%;
+    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.137);
+    border-radius: 4px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  @media (min-width: 100px) and (max-width: 790px) {
+    .new-lists {
+      grid-template-columns: 1fr;
+      width: 90%;
+      h1 {
+            font-size: 200%;
+      }
+    }
+  }

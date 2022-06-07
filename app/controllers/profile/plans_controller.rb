@@ -3,7 +3,8 @@ class Profile::PlansController < ApplicationController
   # before_action :set_recipe
 
   def index
-    @plan = Plan.where(:start_date < Date.now < :final_date)
+    @user.plans
+    # @plan = Plan.where(:start_date < Date.now < :final_date)
   end
 
   def new

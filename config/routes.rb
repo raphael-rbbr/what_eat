@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :profile do
     resources :meals, only: [ :index, :show ]
     resources :groceries_lists, only: [:show]
-    resources :plans, only: [:show, :new, :create]
+    resources :plans, only: [:index, :show, :new, :create]
   end
 
 end
