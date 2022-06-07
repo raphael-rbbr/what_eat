@@ -10,10 +10,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
     <div class="navbar-expand-sm">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-menu">
           <% if user_signed_in? %>
+          <%= link_to "My Profile", profile_plans_path(current_user), class: "nav-link" %>
+          <%= link_to "Explore Meals", profile_meals_path(current_user), class: "nav-link"%>
             <li class="nav-item" id="name">
               <%= "Hello, #{current_user.name}!" %>
             </li>
