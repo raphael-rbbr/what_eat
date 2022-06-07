@@ -2,8 +2,18 @@ class Profile::GroceriesListsController < ApplicationController
   before_action :set_user
 
   def show
-    # @groceries_lists = @user.groceries_lists
-    # authorize @user
+    @ingredients_all = []
+    @ingredients = {}
+    @meals = @user.meals
+    @meals.each do |meal|
+      @ingredients_all << meal.ingredients
+    end
+    @ingredients_all.each do |ingredients|
+      ingredients.each do |ingredient|
+        @ingredients.store(ingredient.name, ingredient.quantity)
+      end
+    end
+    @ingredient_sum = Hash[@ingredients.sort]
   end
 
   private
