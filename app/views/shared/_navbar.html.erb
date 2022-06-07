@@ -1,41 +1,47 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://i.pinimg.com/originals/2e/95/6a/2e956a28d44915b66a9115fde45aecaf.jpg" %>
-    <% end %>
+<div class="navbar-lewagon">
+  <div class="navbar-container">
+    <div class="navbar-container-logo">
+     <%= link_to root_path do %>
+       <%= image_tag("logo-navbar.png", width: '40', alt: "What Eat Logo") %>
+     <% end %>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+
+    <div class="navbar-expand-sm">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-menu">
+          <% if user_signed_in? %>
           <%= link_to "My Profile", profile_plans_path(current_user), class: "nav-link" %>
           <%= link_to "Explore Meals", profile_meals_path(current_user), class: "nav-link"%>
-          <li class="navbar-text" id="name">
-            <%= "Hello, #{current_user.name}!" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%# <% if current_user.profile_photo.valid? %>
+            <li class="nav-item" id="name">
+              <%= "Hello, #{current_user.name}!" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%# <% if current_user.profile_photo.valid? %>
               <%# <%= cl_image_tag current_user.profile_photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <%# <% else %>
-             <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <%# <% end %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%# <%= link_to "Explore Recipes", recipes_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item" id="name">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          </li>
-        <% end %>
-      </ul>
+              <%# <% else %>
+              <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%# <% end %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%# <%= link_to "My Meals", meals_path(current_user), class: "dropdown-item"%>
+                <%# <%= link_to "Explore Recipes", recipes_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+           <li class="nav-item" id="name">
+             <%= link_to "Login", new_user_session_path, class: "navbar-link" %>
+           </li>
+           <li class="nav-item dropdown">
+              <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           </li>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
