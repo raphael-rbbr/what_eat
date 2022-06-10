@@ -1,6 +1,6 @@
 <div class="profile-container">
 
-  <h3>Página Index-Plan</h3>
+  <h3>Página Plan-Show</h3>
 
   <%=link_to "home", root_path%>
 
@@ -9,6 +9,7 @@
   <div class="meals-cards">
 
     <div class="timetable-card">
+      <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
       <%= render "timetable" %>
     </div>
 
@@ -17,22 +18,22 @@
     </div>
 
     <div class="meal-card" data-controller="drag-item">
-      <% @user.meals.each do |meal| %>
+      <% @user.recipes.each do |recipe| %>
         <div  class="list-group-item"
-
+              id="<%= recipe.id %>"
+              data-drag-item-target="recipe"
               data-controller="meal-card"
               data-action="click->meal-card#open">
 
-          <%= cl_image_tag meal.recipe.recipe_photo.key, class:"meal-img" %>
+          <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
           <div class="meal-card-text">
-            <h4><strong><%= meal.recipe.title %> • <%= meal.recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
+            <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
 
             <div  class="link-card"
                   data-toggle="modal"
                   data-target="#exampleModalCenter">
-              <%= link_to "Details", "/profile/meals/#{meal.id}" %>
+              <%= link_to "Details", "/profile/recipes/#{recipe.id}" %>
             </div>
-            <%# <p class="overflow-ellipsis"><%= movie.overview</p> %>
           </div>
         </div>
       <% end %>
