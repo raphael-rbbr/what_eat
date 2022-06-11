@@ -1,8 +1,22 @@
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  display: flex;
+  background-color: #fffff3;
+  position: relative;
+  justify-content: center;
   width: 100%;
-  color: white;
+  color: #E05A47;
   text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.footer-credits{
+  font-family: Kanit;
+  font-size: 14px;
+  color: #E05A47;
+  //padding: 0 ;
+}
+
+.link-footer{
+  font-size: 14px;
+  color: #E05A47;
 }
