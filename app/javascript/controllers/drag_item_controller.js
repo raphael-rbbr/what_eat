@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import Sortable from "sortablejs"
 
 export default class extends Controller {
-  static targets = [ "mealSpot", "recipe" ]
+  static targets = [ "mealSpot", "recipe", "plan" ]
 
   connect() {
     this.sortable = Sortable.create(this.element, {
@@ -26,9 +26,10 @@ export default class extends Controller {
     // })
   }
 
-  createMeal(event) {
+  create(event) {
     console.log(this.mealSpotTarget.id)
     console.log(this.recipeTarget.id)
+    console.log(this.planTarget)
     const body = { "recipe_id": this.recipeTarget.id,
                    "position": this.mealSpotTarget.id,
                    "plan_id": this.planTarget.id }

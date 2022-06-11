@@ -17,7 +17,7 @@
   </div>
   <div class="content">
     <% 42.times do |i| %>
-      <div class="list-group-item" id="<%= i+1 %>" data-controller="drag-item" data-action="drop->drag-item#createMeal" data-drag-item-target="mealSpot">
+      <div class="list-group-item" id="<%= i+1 %>" data-controller="drag-item" data-action="drop->drag-item#create" data-drag-item-target="mealSpot">
       <%# <%# data-plan-id-value="<% current_plan.id" %>
       <%# <% raise %>
         <%# 1. timetable com condicional que só vai exibir as meals com posição = i+1
