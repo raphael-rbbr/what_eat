@@ -17,17 +17,25 @@ class Profile::MealsController < ApplicationController
   end
 
   def create
-    # set_recipe
-    # @meal = Meal.new(meal_params)
-    @meal = Meal.new
-    @meal.recipe = @recipe
+    permitted_params = params.permit(:recipe_id, :position, :plan_id, :meal)
+    recipe = Recipe.find(permitted_params[:recipe_id])
+    plan = Plan.find(permitted_params[:plan_id])
+    position = permitted_params[:position]
+    @meal = Meal.new(plan: plan, recipe: recipe, position: position)
     @meal.save
-    authorize @meal
+    # authorize @meal
   end
 
   def move
     @meal.insert_at(params[:position].to_i)
     head :ok
+  end
+
+  def destroy
+    set_meal
+    @plan = @meal.plan
+    @meal.destroy
+    redirect_to profile_plans_path(@plan)
   end
 
   private
@@ -38,6 +46,11 @@ class Profile::MealsController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def set_meal
+    @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
   def recipe_params

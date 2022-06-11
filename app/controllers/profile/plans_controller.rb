@@ -3,14 +3,14 @@ class Profile::PlansController < ApplicationController
   # before_action :set_recipe
 
   def index
-    @user.plans
     # @plan = Plan.where(:start_date < Date.now < :final_date)
+    @user.plans
   end
 
   def show
     set_plan
-    @plan_id = params[:id]
-    @recipes = current_user.recipes
+    @plan = Plan.find(params[:id])
+    authorize @plan
   end
 
   def new
@@ -27,6 +27,8 @@ class Profile::PlansController < ApplicationController
     redirect_to plans_path
   end
 
+  # Método para chamar o plano atual para puxar a página do Plan/Show
+  # Criar a meal vinculada ao current plan na timetable
   def self.current_plan
     @plan = current_user.plans.where(Date.now > :start_date && Date.now < :final_date)
   end
