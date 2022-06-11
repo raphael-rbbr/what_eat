@@ -17,7 +17,7 @@
 
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-ingredients" role="tabpanel" aria-labelledby="nav-ingredients-tab">
-        <% @meals[0].ingredients.each do |i| %>
+        <% @recipe.ingredients.each do |i| %>
           <li><%= i.description %></li>
         <% end %>
       </div>
