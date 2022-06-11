@@ -8,6 +8,6 @@ export default class extends Controller {
   }
 
   open() {
-    let selectedrecipe = console.log(this.element.innerText);
+    let selectedRecipe = console.log(this.element.innerText);
   }
 }

@@ -9,15 +9,34 @@
   </div>
   <div class="time-interval">
     <div>Breakfast</div>
-    <div>Lanchinho</div>
+    <div>Snack</div>
     <div>Lunch</div>
-    <div>Lanchinho</div>
+    <div>Snack</div>
     <div>Dinner</div>
     <div>Ceia</div>
   </div>
   <div class="content">
-    <% 42.times do %>
-    <div class="list-group-item" data-controller="drag-item"></div>
+    <% 42.times do |i| %>
+      <div class="list-group-item" id="<%= i+1 %>" data-controller="drag-item" data-action="drop->drag-item#create" data-drag-item-target="mealSpot">
+      <%# <%# data-plan-id-value="<% current_plan.id" %>
+      <%# <% raise %>
+        <%# 1. timetable com condicional que só vai exibir as meals com posição = i+1
+        2. div do meals-cards só vai mostrar as meals com position: 0/nil
+        3. como atualizar a posição da meal?
+        3.1 chamada ajax para um PATCH de um meal, enviando o id da meal e a nova position (definir elementos (id meal, position) e enviar isso para o params da meal - na mesma url)
+        3.2 método update/meal (PATCH)
+          - achar a meal do user que tem a position enviada
+          - fazer update da position dela para 0/nil
+          - se não achar nenhuma meal, não precisa fazer nada
+          - achar a meal com id enviado e salvar a position enviada nela
+
+        data-drag-url="profile/plans/:id/move %>
+
+        <%# <% if current_user.meals.where(position: i + 1).count != nil %>
+        <%# <%= current_user.meals.where(position: i + 1) %>
+        <%# <% end %>
+        <%# current_user.meals.where(position: i + 1).first.recipe.title %>
+      </div>
     <% end %>
   </div>
 </div>

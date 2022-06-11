@@ -8,6 +8,11 @@ class PagesController < ApplicationController
     authorize @user
   end
 
+  def profile
+    @plans = current_user.plans
+    @recipes = current_user.recipes
+  end
+
   private
 
   def set_user

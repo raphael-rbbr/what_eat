@@ -17,11 +17,17 @@ class Profile::MealsController < ApplicationController
   end
 
   def create
-    set_recipe
-    @meal = Meal.new(meal_params)
+    # set_recipe
+    # @meal = Meal.new(meal_params)
+    @meal = Meal.new
     @meal.recipe = @recipe
     @meal.save
     authorize @meal
+  end
+
+  def move
+    @meal.insert_at(params[:position].to_i)
+    head :ok
   end
 
   private
@@ -30,15 +36,11 @@ class Profile::MealsController < ApplicationController
     @user = current_user
   end
 
-  def user_params
-    params.require(:user).permit(:id, :email, :name)
-  end
-
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
 
   def recipe_params
-    params.require(:recipe).permit(:id, :title, :instructions, :prep_time, :servings, :recipe_photo)
+    params.require(:recipe).permit(:id, :title, :instructions, :prep_time, :servings, :recipe_photo, :position)
   end
 end
