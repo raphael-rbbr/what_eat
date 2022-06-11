@@ -10,6 +10,7 @@
 
     <div class="timetable-card">
       <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
+      <%# <%= raise %>
       <%= render "timetable" %>
     </div>
 
@@ -17,14 +18,17 @@
       <h3><strong> Selected Meals for You! </strong></h3>
     </div>
 
-    <div class="meal-card" data-controller="drag-item">
+    <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer">
       <% @user.recipes.each do |recipe| %>
         <div  class="list-group-item"
-              id="<%= recipe.id %>"
-              data-meal-card-target="recipe"
-              data-controller="meal-card"
 
-              data-drag-item-target="recipe">
+              <%# hooks para criar meal %>
+              id="<%= recipe.id %>"
+              data-drag-item-target="recipe"
+
+              <%# hooks para modal-details %>
+              data-controller="meal-card"
+              data-meal-card-target="recipe">
 
           <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
           <div class="meal-card-text">

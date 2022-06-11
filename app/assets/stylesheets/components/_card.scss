@@ -8,13 +8,13 @@
   margin-bottom: 3%;
 }
 
-.meal-card {
+.recipe-cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: 2%;
 }
 
-.meal-card .list-group-item {
+.recipe-cards-container .list-group-item {
   margin: 2%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 150px;
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 950px) {
-  .meal-card .list-group-item {
+  .recipe-cards-container .list-group-item {
     height: 360px;
   }
     h4 {
@@ -76,7 +76,7 @@
   position: absolute;
 }
 
-.meal-card .meal-img {
+.recipe-cards-container .meal-img {
   width: 100%;
   height: 50%;
   object-fit: cover;

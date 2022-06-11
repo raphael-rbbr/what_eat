@@ -2,40 +2,31 @@ import { Controller } from "stimulus"
 import Sortable from "sortablejs"
 
 export default class extends Controller {
-  static targets = [ "mealSpot", "recipe", "plan" ]
+  static targets = [ "mealSpot", "recipe" ]
+  static values = {
+     plan: Number
+   }
 
   connect() {
     this.sortable = Sortable.create(this.element, {
-      onEnd:this.end.bind(this),
       group: 'shared',
       pull: 'clone',
       animation: 150
     })
   }
 
-  end(event) {
-    // console.log(event)
-    // let id = event.item.dataset.id
-    // let data = new FormData()
-    // data.append("to", event.newIndex + 1)
-
-    // Rails.ajax({
-    //   url: this.data.get("url").replace(":id", id),
-    //   type: 'PATCH',
-    //   data: data
-    // })
-  }
-
   create(event) {
+    const token = document.getElementsByName("csrf-token")[0].content;
     console.log(this.mealSpotTarget.id)
     console.log(this.recipeTarget.id)
-    console.log(this.planTarget)
-    const body = { "recipe_id": this.recipeTarget.id,
-                   "position": this.mealSpotTarget.id,
-                   "plan_id": this.planTarget.id }
-    const url = "/profile/meals"
+    console.log(this.planValue)
+    const body = JSON.stringify({ "recipe_id": this.recipeTarget.id,
+                                  "position": this.mealSpotTarget.id,
+                                  "plan_id": this.planValue })
+    const url = "/profile/meals#create"
     fetch(url, {
           method: "POST",
+          headers: { "Content-Type": "application/json", "X-CSRF-Token": token },
           body: body
     })
   }

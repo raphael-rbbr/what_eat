@@ -13,7 +13,7 @@
   border: 2px solid #004AAD;
   border-radius: 50px;
   transition-duration: 0.4s;
-  box-shadow: 0.5px 1px #003276;
+  box-shadow: 0 1px #003276;
 }
 
 .button-1:visited {
@@ -28,8 +28,8 @@
 
 .button-1:active {
   background-color: #FFFFFF;
-  box-shadow: 0.5px 1px #003276;
-  transform: translateY(1px);
+  box-shadow: 0 1px #003276;
+  transform: translateY(3px);
 }
 
 //this is only optional for later usage
