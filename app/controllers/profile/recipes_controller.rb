@@ -10,6 +10,11 @@ class Profile::RecipesController < ApplicationController
 
   def show
     set_recipe
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'profile/recipes/recipe', locals: { recipe: @recipe }, formats: [:html] }
+    end
     # authorize @recipe
   end
 
