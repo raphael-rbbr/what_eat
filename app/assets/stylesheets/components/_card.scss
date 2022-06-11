@@ -45,6 +45,22 @@
   height: 100px;
   width: 150px;
   padding: 0;
+
+  .meal-card-text {
+    padding: 4%;
+    text-align: left;
+    height: 20%;
+    object-fit: cover;
+    width: 100px;
+  }
+
+  .delete-meal-card {
+    position: absolute;
+    width: 40px;
+    color: black;
+    text-align: right;
+  }
+
   // text-align: left;
     p {
       color: grey;

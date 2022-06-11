@@ -30,7 +30,7 @@
             <% if policy(meal).destroy? %>
               <%= link_to 'X', profile_meal_path(meal),
                 method: :delete,
-                class: "btn btn-danger" %>
+                class: "delete-meal-card" %>
             <% end %>
 
             <div  class="link-card"
