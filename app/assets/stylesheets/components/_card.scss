@@ -52,13 +52,14 @@
     height: 20%;
     object-fit: cover;
     width: 100px;
-  }
 
-  .delete-meal-card {
-    position: absolute;
-    width: 40px;
-    color: black;
-    text-align: right;
+    .delete-meal-card {
+      position: absolute;
+      width: 40px;
+      color: black;
+      right: -70px;
+      top: 5px;
+    }
   }
 
   // text-align: left;

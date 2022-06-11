@@ -1,48 +1,48 @@
 <% 42.times do |i| %>
-  <div class="list-group-item"
-       id="<%= i+1 %>"
-       data-controller="drag-item"
-       data-action="drop->drag-item#create"
-       data-drag-item-target="mealSpot"
-       data-drag-item-plan-value="<%= @plan.id %>">
+    <div class="list-group-item"
+        id="<%= i+1 %>"
+        data-controller="drag-item"
+        data-action="drop->drag-item#create"
+        data-drag-item-target="mealSpot"
+        data-drag-item-plan-value="<%= @plan.id %>">
 
-    <% if current_user.meals.where(position: i + 1).count != 0 %>
-      <%# <%= current_user.meals.where(position: i + 1).first.recipe.title %>
-      <% current_user.meals.where(position: i + 1).each do |meal| %>
-        <div  class="list-group-item"
+      <% if current_user.meals.where(position: i + 1).count != 0 %>
+        <%# <%= current_user.meals.where(position: i + 1).first.recipe.title %>
+        <% current_user.meals.where(position: i + 1).each do |meal| %>
+          <div  class="list-group-item"
 
-        <%# hooks para criar meal %>
-        id="<%= meal.recipe.id %>"
-        data-drag-item-target="recipe"
+          <%# hooks para criar meal %>
+          id="<%= meal.recipe.id %>"
+          data-drag-item-target="recipe"
 
-        <%# hooks para modal-details %>
-        data-controller="meal-card"
-        data-action="click->meal-card#open">
+          <%# hooks para modal-details %>
+          data-controller="meal-card"
+          data-action="click->meal-card#open">
 
-          <%= cl_image_tag meal.recipe.recipe_photo.key, class:"meal-img" %>
+            <%= cl_image_tag meal.recipe.recipe_photo.key, class:"meal-img" %>
 
-          <div class="meal-card-text">
-            <h4><strong><%= meal.recipe.title %> •
-              <%= meal.recipe.servings %>
-              <i class="bi bi-people-fill"></i></strong>
-            </h4>
+            <div class="meal-card-text">
+              <h4><strong><%= meal.recipe.title %> •
+                <%= meal.recipe.servings %>
+                <i class="bi bi-people-fill"></i></strong>
+              </h4>
 
-            <% if policy(meal).destroy? %>
-              <%= link_to 'X', profile_meal_path(meal),
-                method: :delete,
-                class: "delete-meal-card" %>
-            <% end %>
+              <% if policy(meal).destroy? %>
+                <%= link_to 'X', profile_meal_path(meal),
+                  method: :delete,
+                  class: "delete-meal-card" %>
+              <% end %>
 
-            <div  class="link-card"
-              data-toggle="modal"
-              data-target="#exampleModalCenter">
-              <%= link_to "Details", "/profile/recipes/#{meal.recipe.id}" %>
+              <div  class="link-card"
+                data-toggle="modal"
+                data-target="#exampleModalCenter">
+                <%= link_to "Details", "/profile/recipes/#{meal.recipe.id}" %>
+              </div>
+
+
             </div>
-
-
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 <% end %>

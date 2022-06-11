@@ -8,13 +8,12 @@ export default class extends Controller {
    }
 
   connect() {
-    // this.sortable = Sortable.create(this.element, {
-    //   group: 'shared',
-    //   pull: 'clone',
-    //   animation: 150
-    // })
+    this.sortable = Sortable.create(this.mealSpotTarget, {
+      group: 'shared',
+      animation: 150
+    })
 
-    this.sortable = Sortable.create(this.element, {
+    this.sortable = Sortable.create(cloning, {
       group: {
           name: 'shared',
           pull: 'clone',
@@ -24,27 +23,7 @@ export default class extends Controller {
       sort: false
     })
 
-    this.sortable = Sortable.create(this.element, {
-      group: 'shared',
-      animation: 150
-    })
-
   }
-
-      //   new Sortable(example4Left, {
-      //     group: {
-      //         name: 'shared',
-      //         pull: 'clone',
-      //         put: false // Do not allow items to be put into this list
-      //     },
-      //     animation: 150,
-      //     sort: false // To disable sorting: set sort to false
-      // });
-
-      // new Sortable(example4Right, {
-      //     group: 'shared',
-      //     animation: 150
-      // });
 
   create(event) {
     const token = document.getElementsByName("csrf-token")[0].content;

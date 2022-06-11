@@ -55,8 +55,6 @@ html, body{
     display: grid;
     // 7 days a week
     grid-template-columns: repeat(7, 1fr);
-    text-transform: uppercase;
-    font-size: 12px;
     & > div{
       display: flex;
       align-items: center;
