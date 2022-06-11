@@ -19,7 +19,7 @@
     <ul>
       <%# precisamos ajustar de forma a criar lista para planos anteriores e plano atual
       por enquanto, fiz um link "forçado" para único plano disponível %>
-      <li><%= link_to "Current Plan", "/profile/plans/#{@current_user.plans.first.id}", class: "nav-link" %></li>
+      <li><%= link_to "Current Plan", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
     </ul>
 
   </div>
