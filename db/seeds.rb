@@ -35,8 +35,8 @@ profile_file = URI.open('https://images.unsplash.com/flagged/photo-1595514191830
 User.last.profile_photo.attach(io: profile_file, filename: 'user.png', content_type: 'image/png')
 
 
-Diet.create!(user_id: User.last.id,
-             diet_type: 7
+Diet.create!(user_id: User.last.id
+  # diet_type: 7
 )
 
 Intolerance.create!(user_id: User.last.id,
@@ -121,6 +121,7 @@ list["results"].each do |r|
                        quantity: i["amount"],
                        unit: i["unit"],
                        meal_id: Meal.last.id,
+                       recipe_id: Recipe.last.id,
                        groceries_list_id: GroceriesList.last.id
     )
     puts "Ingredient created: #{Ingredient.last.id} - #{Ingredient.last.name}"
