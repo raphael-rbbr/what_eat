@@ -1,13 +1,14 @@
 import { Controller } from "@hotwired/stimulus"
+import { useDispatch } from 'stimulus-use'
 
 export default class extends Controller {
+  static targets = ["recipe"]
 
   connect() {
-    console.log("Hello, Stimulus!")
-    // this.outputTarget.textContent = 'Hello, Stimulus!'
+    useDispatch(this);
   }
 
-  open() {
-    let selectedRecipe = console.log(this.element.innerText);
+  click() {
+    this.dispatch("click", { content: this.recipeTarget.id });
   }
 }

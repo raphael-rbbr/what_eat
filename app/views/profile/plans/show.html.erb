@@ -21,9 +21,10 @@
       <% @user.recipes.each do |recipe| %>
         <div  class="list-group-item"
               id="<%= recipe.id %>"
-              data-drag-item-target="recipe"
+              data-meal-card-target="recipe"
               data-controller="meal-card"
-              data-action="click->meal-card#open">
+
+              data-drag-item-target="recipe">
 
           <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
           <div class="meal-card-text">
@@ -31,22 +32,27 @@
 
             <div  class="link-card"
                   data-toggle="modal"
-                  data-target="#exampleModalCenter">
-              <%= link_to "Details", "/profile/recipes/#{recipe.id}" %>
+                  data-target="#modal<%=recipe.id%>">
+              <%# <%= link_to "Details", "/profile/recipes/#{recipe.id}" %>
+              <button data-action="meal-card#click"></button>
             </div>
           </div>
         </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div  class="modal fade"
+              data-controller="modal"
+              data-action="meal-card:click@window->modal#open"
+              id="modal<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal<%=recipe.id%>Title" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <h5 class="modal-title" id="modal<%=recipe.id%>Title">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                <%= render partial: "recipe", object: recipe%>
+              <div  class="modal-body">
+                <div id="recipe<%=recipe.id%>">
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
