@@ -106,6 +106,10 @@ list["results"].each do |r|
 
   puts "Recipe created: #{Recipe.last.id} - #{Recipe.last.title}"
 
+
+  # Não vai precisar criar a meal automático. Apenas quando joga no timetable.
+  # A ideia é que não precise criar a meal para a recipe existir
+
   Meal.create!(plan_id: Plan.last.id,
                recipe_id: Recipe.last.id
   )

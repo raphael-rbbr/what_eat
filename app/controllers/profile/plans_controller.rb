@@ -7,23 +7,29 @@ class Profile::PlansController < ApplicationController
     # @plan = Plan.where(:start_date < Date.now < :final_date)
   end
 
+  def show
+    set_plan
+    @plan_id = params[:id]
+    @recipes = current_user.recipes
+  end
+
   def new
-    @meal = Meal.new
-    authorize @meal
+    @plan = Plan.new
+    authorize @plan
   end
 
   def create
-    set_recipe
-    @meal = Meal.new(meal_params)
-    @meal.recipe = @recipe
-    @meal.save
-    authorize @meal
+    @start_date = :start_date
+    @final_date = :final_date
+    @user_id = current_user.id
+    @plan = Plan.new(start_date: @start_date, final_date: @final_date, user_id: @user_id)
+    @plan.save
+    redirect_to plans_path
   end
 
-  # change this later from recipes to meals
-  # def index
-  #   @recipes = @user.recipes
-  # end
+  def self.current_plan
+    @plan = current_user.plans.where(Date.now > :start_date && Date.now < :final_date)
+  end
 
   private
 
@@ -32,11 +38,11 @@ class Profile::PlansController < ApplicationController
   end
 
   def set_plan
-    # @user = current_user
+    @plan = Plan.find(params[:id])
   end
 
   def plan_params
-    # params.require(:user).permit(:id, :email, :name)
+    params.require(:plan).permit(:id, :email, :name)
   end
 
   def set_recipe

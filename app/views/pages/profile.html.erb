@@ -1,0 +1,27 @@
+<div>
+
+  <h3> Select your plan! </h3>
+
+  <div>
+
+    <h3> Old Plans </h3>
+
+    <ul>
+      <li>Placeholder</li>
+    </ul>
+
+  </div>
+
+  <div>
+
+    <h3> Current Plan </h3>
+
+    <ul>
+      <%# precisamos ajustar de forma a criar lista para planos anteriores e plano atual
+      por enquanto, fiz um link "forçado" para único plano disponível %>
+      <li><%= link_to "Current Plan", "/profile/plans/#{@current_user.plans.first.id}", class: "nav-link" %></li>
+    </ul>
+
+  </div>
+
+</div>
