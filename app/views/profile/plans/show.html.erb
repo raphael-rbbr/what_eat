@@ -28,23 +28,18 @@
 
               <%# hooks para modal-details %>
               data-controller="meal-card"
-              data-meal-card-target="recipe"
+              data-meal-card-target="recipe">
 
-              <%# understand why it just work if I click on details first %>
-              data-toggle="modal"
-              data-target="#modal-xl<%=recipe.id%>"
-              data-action="meal-card#click">
-
-          <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
-          <div class="meal-card-text">
-            <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
-
+          <div class="meal-card-info">
             <%# btn details - I want to kill it and transform all card clickable %>
             <div  class="link-card"
                   data-toggle="modal"
                   data-target="#modal-xl<%=recipe.id%>">
-              <button data-action="meal-card#click">Details</button>
+              <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
+              <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
             </div>
+
+            <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
           </div>
         </div>
 
@@ -55,12 +50,6 @@
               id="modal-xl<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal-xl<%=recipe.id%>Title" aria-hidden="true">
           <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modal-xl<%=recipe.id%>Title"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
               <%# replace the html woth the partial _recipe of the recipe id chosen %>
               <div  class="modal-body">
                 <div id="recipe<%=recipe.id%>">
