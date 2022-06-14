@@ -6,19 +6,20 @@
 
   <%=link_to "Groceries List", profile_groceries_list_path(@user)%>
 
-  <div class="meals-cards">
+  <div class="timetable-and-meals-cards-container">
 
-    <div class="timetable-card">
+    <div class="timetable-container">
       <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
       <%# <%= raise %>
       <%= render "timetable" %>
     </div>
 
-    <div>
-      <h3><strong> Selected Meals for You! </strong></h3>
-    </div>
+    <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer" id="cloning">
 
-    <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer">
+      <div>
+        <h3><strong> Selected Meals for You! </strong></h3>
+      </div>
+
       <% @user.recipes.each do |recipe| %>
         <div  class="list-group-item"
 

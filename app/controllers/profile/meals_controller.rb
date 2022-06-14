@@ -35,7 +35,7 @@ class Profile::MealsController < ApplicationController
     set_meal
     @plan = @meal.plan
     @meal.destroy
-    redirect_to profile_plans_path(@plan)
+    redirect_to "/profile/plans/#{@plan.id}"
   end
 
   private
