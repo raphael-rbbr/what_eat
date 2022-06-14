@@ -40,15 +40,15 @@ html, body{
   box-sizing: border-box;
 }
 
-.timetable-card{
+.timetable-container{
   @include make-tiles;
   display: grid;
   grid-template-areas: ". week"
                        "time content";
-  grid-template-columns: 120px;
-  grid-template-rows: 60px;
-  width: 50vw;
-  height: 100vh;
+  grid-template-columns: 100px;
+  grid-template-rows: 50px;
+  width: 40vw;
+  height: 80vh;
 
   .week-names{
     grid-area: week;

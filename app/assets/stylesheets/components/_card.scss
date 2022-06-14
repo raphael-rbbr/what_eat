@@ -1,17 +1,20 @@
-.meals-cards {
+.timetable-and-meals-cards-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: center;
+  // text-align: center;
   width: 80%;
   margin-top: 3%;
   margin-bottom: 3%;
 }
 
 .recipe-cards-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 2%;
+  order: 1;
 }
 
 .recipe-cards-container .list-group-item {
@@ -39,7 +42,7 @@
     }
 }
 
-.timetable-card .list-group-item {
+.timetable-container .list-group-item {
   // margin: 2%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 100px;
