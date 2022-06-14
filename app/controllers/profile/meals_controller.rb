@@ -1,9 +1,10 @@
 class Profile::MealsController < ApplicationController
-  before_action :set_user
-
+  before_action :set_user,
   def index
-    @user.meals
+    @meals = Meal.all
+
   end
+
 
   def show
     set_recipe
@@ -23,7 +24,7 @@ class Profile::MealsController < ApplicationController
     position = permitted_params[:position]
     @meal = Meal.new(plan: plan, recipe: recipe, position: position)
     @meal.save
-    # authorize @meal
+    authorize @meal
   end
 
   def move
