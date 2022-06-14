@@ -1,2 +1,53 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.modal {
+  margin: auto;
+}
+
+.modal-body {
+  background-color: white;
+  padding: 0;
+}
+
+.info-button {
+  background: transparent;
+  border: none !important;
+  color: #004AAD;
+}
+
+.meal-card-info .info-button {
+  position: absolute;
+}
+
+// inside card meal modal
+
+.meal-card {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.meal-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.meal-card-header-text p {
+  margin: 0;
+}
+
+.close-button {
+  background: transparent;
+  border: none !important;
+  color: #004AAD;
+}
+
+li {
+  list-style-type: none;
+}
+
+.tab-content {
+  font-family: "Kanit", "Helvetica";
+}

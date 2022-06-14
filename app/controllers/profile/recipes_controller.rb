@@ -15,7 +15,7 @@ class Profile::RecipesController < ApplicationController
       format.html
       format.text { render partial: 'profile/recipes/recipe', locals: { recipe: @recipe }, formats: [:html] }
     end
-    # authorize @recipe
+    authorize @recipe
   end
 
   private

@@ -1,15 +1,20 @@
-<p><%= recipe.id %></p>
-
-
-<h3>Página Show-Recipes</h3>
-
-<div class="card-meal">
+<div class="meal-card">
   <%= cl_image_tag recipe.recipe_photo.key, height: 300, width: 400, crop: :fill %>
 
-  <div class="card-meal-info">
-    <h2><%= recipe.title %></h2>
-    <p>Preparation: <%= recipe.prep_time %> minutes</p>
-    <p>Servings: <%= recipe.servings %></p>
+  <div class="meal-card-info">
+    <div class="meal-card-header">
+      <div class="meal-card-header-text">
+        <h2><%= recipe.title %></h2>
+        <p>Preparation: <%= recipe.prep_time %> minutes</p>
+        <p>Servings: <%= recipe.servings %></p>
+      </div>
+
+      <div class="meal-card-header-close">
+        <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-circle-fill"></i>
+        </button>
+      </div>
+    </div>
 
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -25,7 +30,9 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="nav-instructions" role="tabpanel" aria-labelledby="nav-instructions-tab">
-        <p><%= recipe.instructions %></p>
+      <% recipe.instructions.split(".").each do |p| %>
+        <li><%= p %></li>
+      <% end %>
       </div>
     </div>
   </div>

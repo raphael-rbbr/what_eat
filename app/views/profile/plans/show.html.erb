@@ -30,37 +30,30 @@
               data-controller="meal-card"
               data-meal-card-target="recipe">
 
-          <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
-          <div class="meal-card-text">
-            <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
-
+          <div class="meal-card-info">
+            <%# btn details - I want to kill it and transform all card clickable %>
             <div  class="link-card"
                   data-toggle="modal"
-                  data-target="#modal<%=recipe.id%>">
-              <%# <%= link_to "Details", "/profile/recipes/#{recipe.id}" %>
-              <button data-action="meal-card#click"></button>
+                  data-target="#modal-xl<%=recipe.id%>">
+              <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
+              <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
             </div>
+
+            <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
           </div>
         </div>
-        <div  class="modal fade"
+
+        <%# modal of recipe %>
+        <div  class="modal fade modal-xl"
               data-controller="modal"
               data-action="meal-card:click@window->modal#open"
-              id="modal<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal<%=recipe.id%>Title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
+              id="modal-xl<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal-xl<%=recipe.id%>Title" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modal<%=recipe.id%>Title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+              <%# replace the html woth the partial _recipe of the recipe id chosen %>
               <div  class="modal-body">
                 <div id="recipe<%=recipe.id%>">
                 </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
