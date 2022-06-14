@@ -11,4 +11,4 @@ const initNavbarScroll = () => {
   });
 }
 
-export { initNavbarScroll }
+//export { initNavbarScroll }

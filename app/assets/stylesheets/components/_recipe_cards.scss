@@ -1,9 +1,39 @@
 .recipe-home-card{
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   width: 285px;
   height: 320px;
   margin: auto;
   box-shadow: 0 1px 3px 0 rgb(150, 150, 150);
-  border-radius: 10%;
+  border-radius: 20px;
+}
+
+.recipe-home-card-content{
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-evenly;
+  max-width: 285px;
+  height: 320px;
+}
+
+.recipe-home-card-image{
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  //border-bottom-left-radius: 0;
+  //border-bottom-right-radius: 0;
+  margin: 10px 10px 0;
+}
+
+.recipe-home-card-text{
+  padding: 10px 16px;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
