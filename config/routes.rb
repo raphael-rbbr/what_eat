@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/profile", to: "pages#profile"
 
   namespace :profile do
-    resources :recipes, only: [ :index, :show ]
+    resources :recipes, only: [ :index, :show, :create ]
     resources :meals, only: [ :index, :show, :create, :destroy ]
     resources :groceries_lists, only: [:show]
     resources :plans, only: [:index, :show, :new, :create]
