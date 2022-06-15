@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
+    Diet.create(user_id: @user.id, diet_type: 0)
   end
 
   def user_params
