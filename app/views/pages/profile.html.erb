@@ -31,7 +31,6 @@
       <h3> You don't have any plans yet </h3>
 
       <%= link_to "Create a new plan", profile_plans_path, method: :post %>
-
     </div>
   <% else %>
     <div>
@@ -40,6 +39,7 @@
         <h3> Current Plan </h3>
         <ul>
           <li><%= link_to "Current Plan", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
+                <%GroceriesList.create(user_id: current_user.id, plan_id: @plans.last.id)%>
         </ul>
       </div>
 

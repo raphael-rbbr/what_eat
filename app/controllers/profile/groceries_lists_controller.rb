@@ -20,7 +20,7 @@ class Profile::GroceriesListsController < ApplicationController
     @ingredients = {}
     @meals = @user.meals
     @meals.each do |meal|
-      @ingredients_all << meal.ingredients
+      @ingredients_all << meal.recipe.ingredients
     end
     @ingredients_all.each do |ingredients|
       ingredients.each do |ingredient|
@@ -53,9 +53,8 @@ class Profile::GroceriesListsController < ApplicationController
   end
 
   def set_recipes
-    @recipes = []
     @recipes = @meals.each do |meal|
-      @recipes << meal.recipes
+      meal.recipes
     end
   end
 

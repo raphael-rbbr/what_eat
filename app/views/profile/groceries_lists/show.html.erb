@@ -2,14 +2,15 @@
   <h1>Página Show-Groceries List</h1>
   <%=link_to "home", root_path%>
 
-  <div class="groceries_list">
+  <div class="groceries_list mx-3">
 
     <% @ingredient_sum.each do |ingredient| %>
-      <div class="groceries_item">
+      <div class="groceries_item m-2">
         <li><%=ingredient[0]%>  --------  <%=ingredient[1]%>. <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
       </div>
     <%end%>
   </div>
 </div>
+
 
 <%raise%>

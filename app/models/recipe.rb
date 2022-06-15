@@ -72,7 +72,21 @@ class Recipe < ApplicationRecord
       new_recipe.recipe_photo.attach(io: file, filename: 'meal.png', content_type: 'image/png')
 
       new_recipe.save
+      recipe["extendedIngredients"].each do |i|
+        Ingredient.create!(description: i["original"],
+                           name: i["name"],
+                           quantity: i["amount"],
+                           unit: i["unit"],
+                           recipe_id: Recipe.last.id,
+                           groceries_list_id: current_user.groceries_lists.first.id
+        )
+      end
     end
   end
+
+  # create_recipes_ingredients(recipe)
+  # def create_recipes_ingredients(recipe)
+  # end
+
 
 end
