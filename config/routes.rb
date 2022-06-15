@@ -22,4 +22,6 @@ Rails.application.routes.draw do
     # end
   end
 
+  resources :diets, only: [:edit, :update]
+
 end
