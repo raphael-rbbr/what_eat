@@ -10,7 +10,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-menu">
           <% if user_signed_in? %>
-          <%= link_to "My Profile", profile_path(current_user), class: "navbar-link" %>
+            <%if current_user.diet == nil%>
+              <%Diet.create(user_id: current_user.id, diet_type: 0)%>
+              <%= link_to "My Profile", profile_path(current_user), class: "navbar-link" %>
+            <%else%>
+              <%= link_to "My Profile", profile_path(current_user), class: "navbar-link" %>
+            <%end%>
           <%= link_to "Groceries list",  profile_groceries_list_path(current_user), class: "navbar-link"%>
             <li class="nav-item" id="name">
               <%= "Hello, #{current_user.name}!" %>
