@@ -4,8 +4,8 @@ class Profile::RecipesController < ApplicationController
   def index
     @recipes = @user.recipes
     # authorize @user
-    # @recipes = policy_scope(Recipe).order(created_at: :desc)
-    # authorize @recipes
+    @recipes = policy_scope(Recipe).order(created_at: :desc)
+    authorize @recipes
   end
 
   def show
@@ -16,6 +16,19 @@ class Profile::RecipesController < ApplicationController
       format.text { render partial: 'profile/recipes/recipe', locals: { recipe: @recipe }, formats: [:html] }
     end
     authorize @recipe
+  end
+
+  def new
+    @recipe = Recipe.new
+    authorize @recipe
+  end
+
+  def create
+    @recipes = Recipe.create_user_recipes(current_user)
+    @recipes.save
+    authorize @recipes
+
+    redirect_to profile_plans_path(Plan.last)
   end
 
   private
