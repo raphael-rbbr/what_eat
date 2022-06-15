@@ -30,7 +30,7 @@ class Recipe < ApplicationRecord
 
     # binding.pry
 
-    url_list = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?diet=#{current_user.diet}&intolerances=#{check_intolerances(current_user)}")
+    url_list = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?diet=#{current_user.diet.diet_type}&intolerances=#{check_intolerances(current_user)}")
 
     http = Net::HTTP.new(url_list.host, url_list.port)
     http.use_ssl = true
