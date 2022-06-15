@@ -3,7 +3,9 @@
 
 <div class="groceries_list">
 
-  <%@ingredient_sum.each do |ingredient|%>
-    <li><%=ingredient[0]%>  --------  <%=ingredient[1]%>. <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
-    <%end%>
+  <div>
+    <%@ingredient_sum.each do |ingredient|%>
+      <li><%=ingredient[0]%>  --------  <%=ingredient[1]%>. <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
+      <%end%>
+  </div>
 </div>
