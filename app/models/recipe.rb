@@ -4,7 +4,6 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
-
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :meals
