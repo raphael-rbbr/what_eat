@@ -6,6 +6,19 @@ class DietsController < ApplicationController
     authorize @diet
   end
 
+  def new
+    @diet = Diet.new
+    authorize @diet
+  end
+
+  def create
+    @user_id = current_user.id
+    @diet = Diet.new(user_id: @user_id)
+    @diet.save
+    authorize @diet
+    redirect_to profile_path
+  end
+
   def update
     @diet = Diet.find(params[:id])
     if @diet.update(diet_type: diet_params[:diet_type].to_i)
