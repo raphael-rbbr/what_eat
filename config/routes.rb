@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   end
 
   resources :diets, only: [:edit, :update]
+  resources :intolerances, only: [:edit, :update]
 
 end
