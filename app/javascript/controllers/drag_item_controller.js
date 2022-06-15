@@ -8,11 +8,21 @@ export default class extends Controller {
    }
 
   connect() {
-    this.sortable = Sortable.create(this.element, {
+    this.sortable = Sortable.create(this.mealSpotTarget, {
       group: 'shared',
-      pull: 'clone',
       animation: 150
     })
+
+    this.sortable = Sortable.create(cloning, {
+      group: {
+          name: 'shared',
+          pull: 'clone',
+          put: false
+      },
+      animation: 150,
+      sort: false
+    })
+
   }
 
   create(event) {

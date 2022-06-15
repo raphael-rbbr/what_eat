@@ -26,13 +26,6 @@
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :profile_photo, as: :file %>
       </div>
-
-      <div class="preferences-inputs">
-        <%= f.input :diet, as: :radio_buttons,
-            collection: [['No diet',0], ['Pescetarian',1], ['Lacto vegetarian',2], ['Ovo vegetarian',3], ['Vegan',4], ['Paleo',5], ['Primal',6], ['Vegetarian',7]] %>
-        <%= f.input :intolerances, as: :check_boxes,
-            collection: [['Dairy',0], ['Egg',1], ['Gluten',2], ['Peanut',3], ['Sesame',4], ['Seafood',5], ['Shellfish',6], ['Soy',7], ['Sulfite',8], ['Tree nut',9], ['Wheat',10]] %>
-      </div>
     </div>
 
     <div class="form-actions">

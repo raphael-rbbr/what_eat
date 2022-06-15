@@ -24,7 +24,8 @@ class Profile::PlansController < ApplicationController
     @user_id = current_user.id
     @plan = Plan.new(start_date: @start_date, final_date: @final_date, user_id: @user_id)
     @plan.save
-    redirect_to plans_path
+    authorize @plan
+    redirect_to profile_path
   end
 
   # Método para chamar o plano atual para puxar a página do Plan/Show

@@ -1,24 +1,27 @@
-<div class="profile-container">
+<div class="body-container">
 
   <h3>Página Plan-Show</h3>
 
-  <%=link_to "home", root_path%>
+  <%= link_to "Groceries List", profile_groceries_list_path(@user)%>
 
-  <%=link_to "Groceries List", profile_groceries_list_path(@user)%>
+  <%= link_to "Generate Your Recipes!", profile_recipes_path, method: :post, class: "button-2"  %>
 
-  <div class="meals-cards">
+  <%# Recipe.create_user_recipes(current_user) if current_user.recipes == [] %>
 
-    <div class="timetable-card">
+  <div class="timetable-and-meals-cards-container">
+
+    <div class="timetable-container">
       <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
       <%# <%= raise %>
       <%= render "timetable" %>
     </div>
 
-    <div>
-      <h3><strong> Selected Meals for You! </strong></h3>
-    </div>
+    <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer" id="cloning">
 
-    <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer">
+      <div>
+        <h3><strong> Selected Meals for You! </strong></h3>
+      </div>
+
       <% @user.recipes.each do |recipe| %>
         <div  class="list-group-item"
 

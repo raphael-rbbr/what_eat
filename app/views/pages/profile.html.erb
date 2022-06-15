@@ -1,23 +1,37 @@
-<div>
+<div class="body-container">
+
+    <div class="user-preferences">
+    <h3> Diet and intolerances </h3>
+    <div class="user-preferences-diet">
+      Diet type: <%= current_user.diet.diet_type == nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Edit diet
+      </button>
+    </div>
+    <div class="user-preferences-intolerances">
+      Intolerances:
+      <% current_user.intolerances.each_with_index do |intolerance, i| %>
+        <% if i==0 %>
+          <%= intolerance.intolerance_type.capitalize %>
+        <% else %>
+          , <%= intolerance.intolerance_type.capitalize %>
+        <% end %>
+      <% end %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalIntolerances">
+        Edit intolerances
+      </button>
+    </div>
+  </div>
+
+  <%= render "diet" %>
+  <%# <%= render "intolerances" %>
+
   <% if current_user.plans == [] %>
     <div>
       <h3> You don't have any plans yet </h3>
 
-      <%= simple_form_for(url: profile_plans_new_path(Plan.create!(start_date: Date.today, final_date: Date.today+7, user_id: current_user.id))) do |f| %>
-        <%= f.error_notification %>
+      <%= link_to "Create a new plan", profile_plans_path, method: :post %>
 
-        <div class="new-lists">
-
-          <h3>New plan</h3>
-
-          <div class="inputs">
-            <div class="form-inputs">
-              <%= f.input select_datetime Date.today, :prefix => :start_date %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <%# <%= link_to "Create a new plan", Plan.create!(start_date: Date.today, final_date: Date.today+7, user_id: current_user.id)%> %>
     </div>
   <% else %>
     <div>
@@ -25,8 +39,6 @@
       <div>
         <h3> Current Plan </h3>
         <ul>
-          <%# precisamos ajustar de forma a criar lista para planos anteriores e plano atual
-          por enquanto, fiz um link "forçado" para único plano disponível %>
           <li><%= link_to "Current Plan", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
         </ul>
       </div>
@@ -35,7 +47,7 @@
         <h3> Old Plans </h3>
 
         <ul>
-          <li>Placeholder</li>
+          <li>You don't have old plans yet.</li>
         </ul>
       </div>
     </div>

@@ -1,0 +1,22 @@
+  <div class="modal fade" id="exampleModalIntolerances" tabindex="-1" role="dialog" aria-labelledby="exampleModalIntolerancesLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalIntolerancesLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% @intolerances=current_user.intolerances %>
+            <%= simple_form_for @intolerances do |f| %>
+              <%= f.input :intolerances, as: :check_boxes, collection: [['Dairy',0], ['Egg',1], ['Gluten',2], ['Peanut',3], ['Sesame',4], ['Seafood',5], ['Shellfish',6], ['Soy',7], ['Sulfite',8], ['Tree nut',9], ['Wheat',10]] %>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= f.submit class:"btn btn-primary" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
