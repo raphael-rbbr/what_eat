@@ -1,10 +1,12 @@
-<div class="profile-container">
+<div class="body-container">
 
   <h3>Página Plan-Show</h3>
 
-  <%=link_to "home", root_path%>
+  <%= link_to "Groceries List", profile_groceries_list_path(@user)%>
 
-  <%=link_to "Groceries List", profile_groceries_list_path(@user)%>
+  <%= link_to "Generate Your Recipes!", profile_recipes_path, method: :post, class: "button-2"  %>
+
+  <%# Recipe.create_user_recipes(current_user) if current_user.recipes == [] %>
 
   <div class="timetable-and-meals-cards-container">
 

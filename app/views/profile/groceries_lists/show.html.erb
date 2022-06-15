@@ -1,9 +1,11 @@
-<h1>Página Show-Groceries List</h1>
-<%=link_to "home", root_path%>
+<div class="body-container">
+  <h1>Página Show-Groceries List</h1>
+  <%=link_to "home", root_path%>
 
-<div class="groceries_list">
+  <div class="groceries_list">
 
-  <%@ingredient_sum.each do |ingredient|%>
-    <li><%=ingredient[0]%>  --------  <%=ingredient[1]%>. <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
-    <%end%>
+    <% @ingredient_sum.each do |ingredient| %>
+      <li><%=ingredient[0]%>  --------  <%=ingredient[1]%>. <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
+      <%end%>
+  </div>
 </div>

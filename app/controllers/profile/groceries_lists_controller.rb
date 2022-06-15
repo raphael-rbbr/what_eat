@@ -1,5 +1,6 @@
 class Profile::GroceriesListsController < ApplicationController
   before_action :set_user
+  after_action :verify_authorized, except: :show
 
   def show
     @ingredients_all = []
@@ -14,6 +15,7 @@ class Profile::GroceriesListsController < ApplicationController
       end
     end
     @ingredient_sum = Hash[@ingredients.sort]
+
   end
 
   private
