@@ -1,4 +1,50 @@
 <div class="body-container">
+  
+    <div class="user-preferences">
+    <h3> Diet and intolerances </h3>
+    <div class="user-preferences-diet">
+      Diet type: <%= current_user.diet.diet_type == nil ? "No diet" : current_user.diet.diet_type %>
+    </div>
+    <div class="user-preferences-intolerances">
+      Intolerances:
+      <% current_user.intolerances.each_with_index do |intolerance, i| %>
+        <% if i==0 %>
+          <%= intolerance.intolerance_type.capitalize %>
+        <% else %>
+          , <%= intolerance.intolerance_type %>
+        <% end %>
+      <% end %>
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Edit
+    </button>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% @diet=current_user.diet %>
+            <%= simple_form_for @diet do |f| %>
+              <%= f.input :diet_type, as: :radio_buttons, collection: [['No diet',0], ['Pescetarian',1.to_i], ['Lacto vegetarian',2], ['Ovo vegetarian',3], ['Vegan',4], ['Paleo',5], ['Primal',6], ['Vegetarian',7]] %>
+              <%# <%= f.input :intolerances, as: :check_boxes, collection: [['Dairy',0], ['Egg',1], ['Gluten',2], ['Peanut',3], ['Sesame',4], ['Seafood',5], ['Shellfish',6], ['Soy',7], ['Sulfite',8], ['Tree nut',9], ['Wheat',10]] %> %>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= f.submit class:"btn btn-primary" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
   <% if current_user.plans == [] %>
     <div>
       <h3> You don't have any plans yet </h3>
