@@ -3,7 +3,7 @@
     <div class="user-preferences">
     <h3> Diet and intolerances </h3>
     <div class="user-preferences-diet">
-      Diet type: <%= current_user.diet.diet_type == nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
+      Diet type: <%= current_user.diet== nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Edit diet
       </button>

@@ -3,7 +3,6 @@ require 'uri'
 require 'net/http'
 require 'openssl'
 require 'json'
-require "pry-byebug"
 
 class Recipe < ApplicationRecord
   belongs_to :user
@@ -12,7 +11,6 @@ class Recipe < ApplicationRecord
   has_many :ingredients
 
   def self.check_intolerances(user)
-
     current_user = User.find(user.id)
 
     a = []

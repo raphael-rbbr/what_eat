@@ -22,7 +22,6 @@ Rails.application.routes.draw do
     # end
   end
 
-  resources :diets, only: [:edit, :update]
+  resources :diets, only: [:create, :edit, :update]
   resources :intolerances, only: [:edit, :update]
-
 end

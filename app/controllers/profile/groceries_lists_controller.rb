@@ -1,6 +1,19 @@
 class Profile::GroceriesListsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, :set_groceries_list
   after_action :verify_authorized, except: :show
+
+  def new
+    @groceries_list = GroceriesList.new
+    authorize @groceries_list
+  end
+
+  def create
+    user = current_user
+    plan = user.plans.first
+    @groceries_list = GroceriesList.new(user: user, plan: plan)
+    @groceries_list.save
+    authorize @groceries_list
+  end
 
   def show
     @ingredients_all = []
@@ -15,10 +28,17 @@ class Profile::GroceriesListsController < ApplicationController
       end
     end
     @ingredient_sum = Hash[@ingredients.sort]
-
   end
 
   private
+
+  def set_groceries_list
+    if @user.groceries_lists == nil
+      self.create
+    else
+      @groceries_list = @user.groceries_lists
+    end
+  end
 
   def set_user
     @user = current_user
@@ -33,8 +53,9 @@ class Profile::GroceriesListsController < ApplicationController
   end
 
   def set_recipes
+    @recipes = []
     @recipes = @meals.each do |meal|
-      meal.recipes
+      @recipes << meal.recipes
     end
   end
 
@@ -43,5 +64,4 @@ class Profile::GroceriesListsController < ApplicationController
       recipe.ingredients
     end
   end
-
 end
