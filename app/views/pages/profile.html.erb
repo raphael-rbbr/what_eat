@@ -1,55 +1,68 @@
 <div class="body-container">
-
-    <div class="user-preferences">
-    <h3> Diet and intolerances </h3>
-    <div class="user-preferences-diet">
-      Diet type: <%= current_user.diet== nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Edit diet
-      </button>
-    </div>
-    <div class="user-preferences-intolerances">
-      Intolerances:
-      <% current_user.intolerances.each_with_index do |intolerance, i| %>
-        <% if i==0 %>
-          <%= intolerance.intolerance_type.capitalize %>
+  <div class="profile-details">
+    <div class="profile-box details">
+      <div class="profile-specs">
+        <div class="profile-photo">
+          <% if current_user.profile_photo.valid? %>
+            <%= cl_image_tag current_user.profile_photo.key, height: 300, width: 300, radius: 150, crop: :fill %>
         <% else %>
-          , <%= intolerance.intolerance_type.capitalize %>
+            <%= image_tag "avatar.png", height: 150, width: 150, radius: 150, crop: :fill %>
         <% end %>
+        </div>
+        <h2><%= current_user.name %></h2>
+      </div>
+      <div class="profile-preferences">
+        <div class="user-preferences-diet">
+          <h3>Diet type</h3>
+          <%= current_user.diet== nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Edit diet
+          </button>
+        </div>
+        <div class="user-preferences-intolerances">
+          <h3>Intolerances</h3>
+          <% current_user.intolerances.each_with_index do |intolerance, i| %>
+            <% if i==0 %>
+              <%= intolerance.intolerance_type.capitalize %>
+            <% else %>
+              , <%= intolerance.intolerance_type.capitalize %>
+            <% end %>
+          <% end %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalIntolerances">
+            Edit intolerances
+          </button>
+          <%= render "diet" %>
+          <%# <%= render "intolerances" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-box plans">
+      <% if current_user.plans == [] %>
+        <div>
+          <h3> You don't have any plans yet </h3>
+          <%= link_to "Create a new plan", profile_plans_path, method: :post %>
+        </div>
+      <% else %>
+        <div>
+          <h3> Select your plan! </h3>
+          <div>
+            <h3> Current Plan </h3>
+            <ul>
+              <li><%= link_to "Current Plan", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3> Old Plans </h3>
+
+            <ul>
+              <li>You don't have old plans yet.</li>
+            </ul>
+          </div>
+        </div>
       <% end %>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalIntolerances">
-        Edit intolerances
-      </button>
     </div>
   </div>
 
-  <%= render "diet" %>
-  <%# <%= render "intolerances" %>
-
-  <% if current_user.plans == [] %>
-    <div>
-      <h3> You don't have any plans yet </h3>
-
-      <%= link_to "Create a new plan", profile_plans_path, method: :post %>
-
-    </div>
-  <% else %>
-    <div>
-      <h3> Select your plan! </h3>
-      <div>
-        <h3> Current Plan </h3>
-        <ul>
-          <li><%= link_to "Current Plan", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3> Old Plans </h3>
-
-        <ul>
-          <li>You don't have old plans yet.</li>
-        </ul>
-      </div>
-    </div>
-  <% end %>
 </div>
