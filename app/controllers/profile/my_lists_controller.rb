@@ -1,4 +1,4 @@
-class MyListsController < ApplicationController
+class Profile::MyListsController < ApplicationController
   before_action :set_user
 
   def index
