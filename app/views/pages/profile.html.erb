@@ -4,11 +4,11 @@
       <h3> Tell us about your preferences </h3>
       <div class="profile-specs">
         <div class="profile-photo">
-          <% if current_user.profile_photo.valid? %>
-            <%= cl_image_tag current_user.profile_photo.key, height: 200, width: 200, radius: 100, crop: :fill %>
-        <% else %>
-            <%= image_tag "avatar.png", height: 150, width: 150, radius: 150, crop: :fill %>
-        <% end %>
+          <%# <% if current_user.profile_photo.valid? %>
+            <%# <%= cl_image_tag "profile.jpeg", height: 200, width: 200, radius: 100, crop: :fill %>
+        <%# <% else %>
+            <%= image_tag "profil.jpeg", height: 150, width: 150, radius: 150, crop: :fill %>
+        <%# <% end %>
         </div>
       </div>
       <div class="profile-preferences">
