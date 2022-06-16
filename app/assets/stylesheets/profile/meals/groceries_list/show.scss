@@ -1,0 +1,49 @@
+body{
+  background-color: #E05A47;
+  line-height: 1.1;
+}
+
+.body-container {
+  padding-top: 80px;
+}
+
+.list-header {
+  margin-bottom: 40px;
+}
+
+.list-content {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.list-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFF3;
+  border-radius: 40px;
+  width: 720px;
+  padding: 36px 108px;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 150px;
+}
+
+li {
+  font-family: Kanit;
+  font-size: 18px;
+  font-weight: 100;
+  color: black;
+  padding: 8px 0;
+}
+
+.groceries_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  flex-grow: 1;
+  border-bottom: 0.5px solid #D3D3D3;
+  margin: 5px
+}

@@ -1,13 +1,21 @@
 <div class="body-container">
-  <h1>Página Show-Groceries List</h1>
-  <%=link_to "home", root_path%>
+  <div class="list-content">
+    <div class="list-header">
+      <h1>Groceries List</h1>
+      <h5><%= "Plan from #{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}" %></h5>
+    </div>
 
-  <div class="groceries_list">
-
-    <% @ingredient_sum.each do |ingredient| %>
-      <div class="groceries_item">
-        <li><%=ingredient[0]%>  --------  <%=ingredient[1]%>. <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
-      </div>
-    <%end%>
+    <div class="list-box">
+      <% @ingredient_sum.each do |ingredient| %>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label groceries_item" for="flexCheckDefault">
+            <li><%=ingredient[0].capitalize%></li>
+            <span class="divider"></span>
+            <li><%=ingredient[1]%> <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
+          </label>
+        </div>
+      <%end%>
+    </div>
   </div>
 </div>
