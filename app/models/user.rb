@@ -1,3 +1,5 @@
+require 'active_support/core_ext/date/calculations'
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

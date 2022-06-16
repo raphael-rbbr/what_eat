@@ -2,20 +2,21 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <h3></h3>
+          <h3 class="modal-title" id="exampleModalLabel">Select your diet type</h3>
+          <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-circle-fill"></i>
           </button>
         </div>
         <div class="modal-body">
           <% @diet = current_user.diet %>
             <%= simple_form_for @diet do |f| %>
-              <%= f.input :diet_type, as: :radio_buttons, collection: [['No diet',0], ['Pescetarian',1], ['Lacto vegetarian',2], ['Ovo vegetarian',3], ['Vegan',4], ['Paleo',5], ['Primal',6], ['Vegetarian',7]] %>
+              <h9><%= f.input :diet_type, as: :radio_buttons, collection: [['No diet',0], ['Pescetarian',1], ['Lacto vegetarian',2], ['Ovo vegetarian',3], ['Vegan',4], ['Paleo',5], ['Primal',6], ['Vegetarian',7]] %></h9>
               <%# <%= f.input :intolerances, as: :check_boxes, collection: [['Dairy',0], ['Egg',1], ['Gluten',2], ['Peanut',3], ['Sesame',4], ['Seafood',5], ['Shellfish',6], ['Soy',7], ['Sulfite',8], ['Tree nut',9], ['Wheat',10]] %>
           </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <%= f.submit class:"btn btn-primary" %>
+          <button type="button" class="button-1 close" data-dismiss="modal">Close</button>
+              <%= f.submit class:"button-1" %>
             <% end %>
         </div>
       </div>

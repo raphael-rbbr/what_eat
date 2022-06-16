@@ -1,0 +1,88 @@
+body{
+  background-color: #E05A47;
+  line-height: 1.1;
+}
+
+.body-container{
+  padding-top: 140px;
+}
+
+.profile-details{
+  display: flex;
+  max-width: 1200px;
+  text-align: center;
+  background-color: #E05A47;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.profile-specs {
+  padding: 20px;
+}
+
+.profile-box {
+  flex-direction: column;
+  background-color: #FFFFF3;
+  border-radius: 40px;
+  width: 560px;
+  padding: 36px;
+  justify-content: space-between;
+}
+
+.profile-photo{
+  justify-content: center;
+  border-radius: 50%;
+  flex: 0.4;
+  margin: 15px;
+}
+
+.profile-preferences-diet {
+  margin: 0 30px;
+}
+
+.edit-button {
+  background-color: white;
+  border: 0;
+}
+
+.user-edit {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profile-current-plans {
+  align-items: center;
+  margin: auto;
+}
+
+.profile-plans {
+  align-items: center;
+  margin-top: 120px;
+}
+
+// inside edit modal
+
+.modal-body {
+  color: black;
+  padding: 0 150px;
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
+
+.form-check-input.is-valid {
+  border-color: black;
+}
+
+.button-1.close {
+  background-color: white;
+  color: #004AAD;
+}
+
+.close-button {
+  background: transparent;
+  border: none !important;
+  color: #004AAD;
+}

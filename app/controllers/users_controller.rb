@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def start_week
+    @start_week = Date.today.beginning_of_week
+  end
+
   private
 
   def set_user

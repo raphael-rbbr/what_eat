@@ -21,9 +21,13 @@
         <h4><b>Let us help you eat better!</b></h4>
       </div>
       <div class="home-button-box-buttons">
-        <a href="/users/sign_up">
-          <button class="button-1">SIGN UP</button>
-        </a>
+        <% if user_signed_in? %>
+            <button class="button-1"><%= link_to "PLAN MEALS", profile_path(current_user) %></button>
+          <% else %>
+            <a href="/users/sign_up">
+              <button class="button-1">SIGN UP</button>
+            </a>
+        <% end %>
       </div>
     </div>
   </div>
