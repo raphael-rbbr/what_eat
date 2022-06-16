@@ -9,7 +9,7 @@
       <% if current_user.meals.where(position: i + 1).count != 0 %>
         <%# <%= current_user.meals.where(position: i + 1).first.recipe.title %>
         <% current_user.meals.where(position: i + 1).each do |meal| %>
-          <div  class="list-group-item"
+          <div class="list-group-item"
 
           <%# hooks para criar meal %>
           id="<%= meal.recipe.id %>"
