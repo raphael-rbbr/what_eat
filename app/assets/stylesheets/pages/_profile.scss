@@ -10,10 +10,14 @@ body{
 .profile-details{
   display: flex;
   max-width: 1200px;
-  text-align: left;
+  text-align: center;
   background-color: #E05A47;
   margin: 0 auto;
   justify-content: space-between;
+}
+
+.profile-specs {
+  padding: 20px;
 }
 
 .profile-box {
@@ -24,15 +28,32 @@ body{
   width: 560px;
   padding: 36px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .profile-photo{
   justify-content: center;
   border-radius: 50%;
   flex: 0.4;
-  padding: 40px 0px 40px 60px;
+  margin: 15px;
 }
 
-.footer {
-  position: fixed;
+.profile-preferences-diet {
+  margin: 0 30px;
+}
+
+.edit-button {
+  background-color: white;
+  border: 0;
+}
+
+.user-edit {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+}
+
+.profile-plans {
+  align-items: center;
 }

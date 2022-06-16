@@ -17,9 +17,9 @@
               <%= link_to "My Profile", profile_path(current_user), class: "navbar-link" %>
             <%end%>
           <%= link_to "Groceries list",  profile_groceries_list_path(current_user), class: "navbar-link"%>
-            <li class="nav-item" id="name">
+            <h9 class="nav-item" id="name">
               <%= "Hello, #{current_user.name}!" %>
-            </li>
+            </h9>
             <li class="nav-item dropdown">
               <% if current_user.profile_photo.valid? %>
                 <%= cl_image_tag current_user.profile_photo.key, height: 40, width: 40, radius: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

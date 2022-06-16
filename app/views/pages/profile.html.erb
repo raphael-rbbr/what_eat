@@ -1,36 +1,37 @@
 <div class="body-container">
   <div class="profile-details">
     <div class="profile-box details">
+      <h3> Tell us about your preferences </h3>
       <div class="profile-specs">
         <div class="profile-photo">
           <% if current_user.profile_photo.valid? %>
-            <%= cl_image_tag current_user.profile_photo.key, height: 300, width: 300, radius: 150, crop: :fill %>
+            <%= cl_image_tag current_user.profile_photo.key, height: 200, width: 200, radius: 100, crop: :fill %>
         <% else %>
             <%= image_tag "avatar.png", height: 150, width: 150, radius: 150, crop: :fill %>
         <% end %>
         </div>
-        <h2><%= current_user.name %></h2>
+        <h9><%= current_user.name %></h9>
       </div>
       <div class="profile-preferences">
         <div class="user-preferences-diet">
-          <h3>Diet type</h3>
+          <div class="user-edit">
+            <h3>Diet type</h3>
+            <button type="button" class="edit-button" data-toggle="modal" data-target="#exampleModal"><h3><i class="bi bi-pencil-square"></i></h3></button>
+          </div>
           <%= current_user.diet== nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Edit diet
-          </button>
         </div>
         <div class="user-preferences-intolerances">
-          <h3>Intolerances</h3>
+          <div class="user-edit">
+            <h3>Intolerances</h3>
+            <button type="button" class="edit-button" data-toggle="modal" data-target="#exampleModalIntolerances"><h3><i class="bi bi-pencil-square"></i></h3></button>
+          </div>
           <% current_user.intolerances.each_with_index do |intolerance, i| %>
             <% if i==0 %>
-              <%= intolerance.intolerance_type.capitalize %>
+              <h9><%= intolerance.intolerance_type.capitalize %></h9>
             <% else %>
-              , <%= intolerance.intolerance_type.capitalize %>
+              <h9>, <%= intolerance.intolerance_type.capitalize %></h9>
             <% end %>
           <% end %>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalIntolerances">
-            Edit intolerances
-          </button>
           <%= render "diet" %>
           <%# <%= render "intolerances" %>
         </div>
@@ -44,21 +45,17 @@
           <%= link_to "Create a new plan", profile_plans_path, method: :post %>
         </div>
       <% else %>
-        <div>
-          <h3> Select your plan! </h3>
-          <div>
+        <h3> Select your plan! </h3>
+        <div class="profile-plans">
+          <div class="profile-current-plans">
             <h3> Current Plan </h3>
             <ul>
-              <li><%= link_to "Current Plan", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
+              <li><%= link_to "#{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
             </ul>
           </div>
-
-          <div>
+          <div class="profile-old-plans">
             <h3> Old Plans </h3>
-
-            <ul>
-              <li>You don't have old plans yet.</li>
-            </ul>
+              <h9>You don't have old plans yet.</h9>
           </div>
         </div>
       <% end %>
