@@ -21,14 +21,12 @@ body{
 }
 
 .profile-box {
-  display: flex;
   flex-direction: column;
   background-color: #FFFFF3;
   border-radius: 40px;
   width: 560px;
   padding: 36px;
   justify-content: space-between;
-  align-items: center;
 }
 
 .profile-photo{
@@ -50,10 +48,11 @@ body{
 .user-edit {
   display: flex;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: center;
 
 }
 
 .profile-plans {
   align-items: center;
+  margin-top: 120px;
 }

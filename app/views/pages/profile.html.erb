@@ -10,7 +10,6 @@
             <%= image_tag "avatar.png", height: 150, width: 150, radius: 150, crop: :fill %>
         <% end %>
         </div>
-        <h9><%= current_user.name %></h9>
       </div>
       <div class="profile-preferences">
         <div class="user-preferences-diet">
@@ -18,8 +17,9 @@
             <h3>Diet type</h3>
             <button type="button" class="edit-button" data-toggle="modal" data-target="#exampleModal"><h3><i class="bi bi-pencil-square"></i></h3></button>
           </div>
-          <%= current_user.diet== nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %>
+          <h9><%= current_user.diet== nil ? "No diet" : current_user.diet.diet_type.capitalize.sub('_', ' ') %></h9>
         </div>
+        <br><br>
         <div class="user-preferences-intolerances">
           <div class="user-edit">
             <h3>Intolerances</h3>
@@ -49,10 +49,9 @@
         <div class="profile-plans">
           <div class="profile-current-plans">
             <h3> Current Plan </h3>
-            <ul>
-              <li><%= link_to "#{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %></li>
-            </ul>
+            <%= link_to "#{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %>
           </div>
+          <br><br>
           <div class="profile-old-plans">
             <h3> Old Plans </h3>
               <h9>You don't have old plans yet.</h9>
