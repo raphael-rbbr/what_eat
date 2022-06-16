@@ -56,3 +56,29 @@ body{
   align-items: center;
   margin-top: 120px;
 }
+
+// inside edit modal
+
+.modal-body {
+  color: black;
+  padding: 0 150px;
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
+
+.form-check-input.is-valid {
+  border-color: black;
+}
+
+.button-1.close {
+  background-color: white;
+  color: #004AAD;
+}
+
+.close-button {
+  background: transparent;
+  border: none !important;
+  color: #004AAD;
+}
