@@ -18,6 +18,7 @@
         <div class="timetable-content">
           <%= render "timetable_content" %>
         </div>
+      </div>
     </div>
     <div class="main-recipes-container">
       <div class="recipe-cards-header">
@@ -25,7 +26,7 @@
       </div>
       <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer" id="cloning">
         <% @user.recipes.each do |recipe| %>
-         <div class="list-group-item"
+          <div class="list-group-item"
             <%# hooks para criar meal %>
             id="<%= recipe.id %>"
             data-drag-item-target="recipe"
@@ -35,8 +36,8 @@
             <div class="meal-card-info">
               <%# btn details - I want to kill it and transform all card clickable %>
               <div  class="link-card"
-                  data-toggle="modal"
-                  data-target="#modal-xl<%=recipe.id%>">
+                data-toggle="modal"
+                data-target="#modal-xl<%=recipe.id%>">
                 <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
                 <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
               </div>
@@ -49,13 +50,13 @@
             data-action="meal-card:click@window->modal#open"
             id="modal-xl<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal-xl<%=recipe.id%>Title" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-             <div class="modal-content">
-              <%# replace the html woth the partial _recipe of the recipe id chosen %>
-              <div class="modal-body">
-                <div id="recipe<%=recipe.id%>">
+              <div class="modal-content">
+                <%# replace the html woth the partial _recipe of the recipe id chosen %>
+                <div class="modal-body">
+                  <div id="recipe<%=recipe.id%>">
+                  </div>
                 </div>
               </div>
-             </div>
             </div>
           </div>
         <% end %>
