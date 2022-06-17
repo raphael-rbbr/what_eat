@@ -18,4 +18,8 @@ class RecipePolicy < ApplicationPolicy
     true
   end
 
+  def create_recipes?
+    true
+  end
+
 end

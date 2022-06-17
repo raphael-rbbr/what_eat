@@ -1,5 +1,6 @@
 class Intolerance < ApplicationRecord
   belongs_to :user
+  attr_accessor :intolerances
 
   enum intolerance_type: {
     dairy: 0,
