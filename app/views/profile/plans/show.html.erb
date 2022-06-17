@@ -2,14 +2,23 @@
   <div class="main-container-plan">
     <div class="main-timetable-container">
       <div class="timetable-header">
-        <div class="timetable-title">
-          <h3>Página Plan-Show</h3>
+        <div class="secondary-timetable-container">
+          <div class="timetable-title">
+            <h3>Your plan</h3>
+          </div>
+          <div class="timetable-description">
+            <h8>Click on Generate Recipes to get the special selection we made according to your preferences. Choose the recipes, drag and drop them on the calendar.</h8>
+          </div>
+          <%# Recipe.create_user_recipes(current_user) if current_user.recipes == [] %>
         </div>
         <div class="timetable-buttons">
-          <%= link_to "Groceries List", profile_groceries_list_path(@user)%>
-          <%= link_to "Generate Your Recipes!", profile_create_recipes_path, method: :post, class: "button-2" %>
+          <div class="button-2">
+            <%= link_to "Groceries List", profile_groceries_list_path(@user)%>
+          </div>
+          <div class="button-2">
+            <%= link_to "Generate Recipes", profile_create_recipes_path, method: :post %>
+          </div>
         </div>
-        <%# Recipe.create_user_recipes(current_user) if current_user.recipes == [] %>
       </div>
       <div class="timetable-container">
         <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
