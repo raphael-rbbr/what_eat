@@ -2,7 +2,7 @@
   <div class="navbar-container">
     <div class="navbar-container-logo">
      <%= link_to root_path do %>
-       <%= image_tag("logo-navbar.png", width: '40', alt: "What Eat Logo") %>
+      <%= image_tag("logo-navbar.png", width: '40', alt: "What Eat Logo") %>
      <% end %>
     </div>
 
@@ -16,7 +16,7 @@
             <%else%>
               <%= link_to "My Profile", profile_path(current_user), class: "navbar-link" %>
             <%end%>
-          <%= link_to "Groceries list",  profile_groceries_list_path(current_user), class: "navbar-link"%>
+            <%= link_to "Groceries list",  profile_groceries_list_path(current_user), class: "navbar-link"%>
             <h9 class="nav-item" id="name">
               <%= "Hello, #{current_user.name}!" %>
             </h9>
