@@ -23,25 +23,39 @@
 
 .timetable-header{
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  width: 880px;
+  margin-top: 6px;
+  gap: 10px;
+}
+
+.secondary-timetable-container{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .timetable-title{
-  margin-bottom: -8px;
+  margin-bottom: -12px;
   justify-content: center;
+  align-items: center;
+}
+
+.timetable-description{
+  width: 500px;
 }
 
 .timetable-buttons{
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  flex-direction: column;
+  gap: 4px;
   justify-content: center;
 }
 
 .timetable-container{
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .timetable-content{

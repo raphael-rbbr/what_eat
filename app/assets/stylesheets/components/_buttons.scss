@@ -1,13 +1,13 @@
 .button-1 {
   display: flex;
   position: relative;
-  width: 120px;
+  width: 130px;
   height: 44px;
   justify-content: center;
   align-items: center;
   background-color: #004AAD;
   font-family: Kanit;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   color: #FFFFF3;
   border: 2px solid #004AAD;
@@ -34,8 +34,27 @@
 
 //this is only optional for later usage
 
-.button-2{
-  box-shadow: 0px 0px 0.5px 1px #003276;
+.button-2 {
+  display: flex;
+  position: relative;
+  width: 160px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  background-color: #004AAD;
+  font-family: Kanit;
+  font-size: 12px !important;
+  font-weight: 400;
+  color: #FFFFF3;
+  border: 2px solid #004AAD;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+  box-shadow: 0 1px #003276;
+}
+
+.button-2:visited {
+  background-color: #FFFFF3;
+  color: #004AAD;
 }
 
 .button-2:hover {
@@ -45,8 +64,8 @@
 
 .button-2:active {
   background-color: #FFFFFF;
-  box-shadow: 0px 0px 0.5px 1px #003276 inset;
-  transform: translateY(0px);
+  box-shadow: 0 1px #003276;
+  transform: translateY(3px);
 }
 
 .button-delete {
