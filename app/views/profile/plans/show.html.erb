@@ -48,8 +48,8 @@
                 data-toggle="modal"
                 data-target="#modal-xl<%=recipe.id%>">
                 <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
-                <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
               </div>
+              <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
               <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
             </div>
           </div>
