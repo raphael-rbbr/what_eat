@@ -138,9 +138,6 @@ ActiveRecord::Schema.define(version: 2022_06_15_024025) do
   add_foreign_key "intolerances", "users"
   add_foreign_key "meals", "plans"
   add_foreign_key "meals", "recipes"
-  add_foreign_key "my_list_to_buys", "groceries_lists", column: "groceries_lists_id"
-  add_foreign_key "my_list_to_buys", "plans"
-  add_foreign_key "my_list_to_buys", "users"
   add_foreign_key "plans", "users"
   add_foreign_key "recipes", "users"
 end
