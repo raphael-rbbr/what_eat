@@ -1,5 +1,7 @@
 class Profile::RecipesController < ApplicationController
   before_action :set_user
+  # before_action :verify_authorized, except: :create_recipes
+  skip_after_action :verify_authorized
 
   def index
     @recipes = @user.recipes
@@ -23,12 +25,21 @@ class Profile::RecipesController < ApplicationController
     authorize @recipe
   end
 
-  def create
+  # def create
+  #   @recipes = Recipe.create_user_recipes(current_user)
+  #   authorize @recipes
+  #   authorize current_user
+
+  #   redirect_to profile_plans_path(Plan.last)
+  # end
+
+  def create_recipes
     @recipes = Recipe.create_user_recipes(current_user)
+    skip_authorization
     # @recipes.save
     # authorize @recipes
 
-    redirect_to profile_plans_path(Plan.last)
+    redirect_to profile_plan_path(Plan.last)
   end
 
   private

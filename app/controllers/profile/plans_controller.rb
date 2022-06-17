@@ -1,10 +1,12 @@
 class Profile::PlansController < ApplicationController
   before_action :set_user
+  skip_after_action :verify_authorized
   # before_action :set_recipe
 
   def index
     # @plan = Plan.where(:start_date < Date.now < :final_date)
     @user.plans
+    skip_authorization
   end
 
   def show
