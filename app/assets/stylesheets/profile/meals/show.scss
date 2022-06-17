@@ -1,55 +1,75 @@
 .body-container-plan{
-  padding-top: 80px;
+  padding-top: 54px;
 }
 
 .main-container-plan{
   display: flex;
   justify-content: flex-start;
-  margin-top: 20px;
-  margin-left: 50px;
+  margin: 10px;
+  gap: 10px;
 }
 
-.header-container-plan{
+.main-timetable-container{
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
-  padding: 0 20px 20px 20px;
-
+  justify-content: center;
+  align-items: center;
+  width: 960px;
+  height: 580px;
+  background-color: #FFFFF3;
+  border-radius: 40px;
+  padding: 10px;
 }
 
-.title-container-plan{
-
+.timetable-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.header-buttons-container-plan{
+.timetable-title{
+  margin-bottom: -8px;
+  justify-content: center;
+}
+
+.timetable-buttons{
   display: flex;
   gap: 20px;
-}
-
-.planner-container{
-  display: flex;
-  max-width: 1200px;
+  margin-top: 10px;
+  justify-content: center;
 }
 
 .timetable-container{
   display: flex;
-  width: 600px;
-  height: auto;
-
+  margin-top: 20px;
 }
 
 .timetable-content{
-  margin: 40px -520px;
+  margin: -432px 0 0 114px;
+}
+
+.main-recipes-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 580px;
+  width: 460px;
+  overflow-y: scroll;
+  background-color: #FFFFF3;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.recipe-cards-header{
+  display: flex;
+  margin-top: 10px;
 }
 
 .recipe-cards-container{
-  // display: grid;
-  // grid-template-columns: 1fr;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 600px;
-  width: 600px;
-  height: 400px;
+  justify-content: center;
+  height: 600px;
 }
 
 .card-meal {
