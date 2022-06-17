@@ -22,11 +22,7 @@
             <%= cl_image_tag meal.recipe.recipe_photo.key, class:"meal-img" %>
 
             <div class="meal-card-text">
-              <h4><strong><%= meal.recipe.title %> •
-                <%= meal.recipe.servings %>
-                <i class="bi bi-people-fill"></i></strong>
-              </h4>
-
+            
               <% if policy(meal).destroy? %>
                 <%= link_to 'X', profile_meal_path(meal),
                   method: :delete,
