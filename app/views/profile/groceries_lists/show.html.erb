@@ -2,7 +2,7 @@
   <div class="list-content">
     <div class="list-header">
       <h1>Groceries List</h1>
-      <h5><%= "Plan from #{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}" %></h5>
+      <h6>Plan from <strong><%="#{Date.today.beginning_of_week.strftime('%d')} #{Date.today.beginning_of_week.strftime('%b')} #{Date.today.beginning_of_week.strftime('%y')}"%></strong>  to <strong><%="#{(Date.today.beginning_of_week+6).strftime('%d')} #{(Date.today.beginning_of_week+6).strftime('%b')} #{(Date.today.beginning_of_week+6).strftime('%y')}"%></strong></h6>
     </div>
 
     <div class="list-box">
@@ -10,9 +10,9 @@
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           <label class="form-check-label groceries_item" for="flexCheckDefault">
-            <li><%=ingredient[0].capitalize%></li>
+            <li><h9><%=ingredient[0].capitalize%></h9></li>
             <span class="divider"></span>
-            <li><%=ingredient[1]%> <%=(Ingredient.find_by(name: ingredient[0])).unit%></li>
+            <li><h9><%=ingredient[1]%> <%=(Ingredient.find_by(name: ingredient[0])).unit%></h9></li>
           </label>
         </div>
       <%end%>
