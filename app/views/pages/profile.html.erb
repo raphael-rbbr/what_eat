@@ -6,9 +6,9 @@
         <div class="profile-photo">
           <% if current_user.profile_photo.valid? %>
             <%= cl_image_tag current_user.profile_photo.key, height: 200, width: 200, radius: 100, crop: :fill %>
-        <% else %>
-            <%= image_tag "profil.jpg", height: 150, width: 150, radius: 100, crop: :fill %>
-        <% end %>
+          <% else %>
+            <%= image_tag("profil.jpg", height: 200, width: 200, radius: 100, crop: :fill, class: "profile-pic") %>
+          <% end %>
         </div>
       </div>
       <div class="profile-preferences">
