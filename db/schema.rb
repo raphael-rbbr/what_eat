@@ -93,17 +93,6 @@ ActiveRecord::Schema.define(version: 2022_06_15_024025) do
     t.index ["recipe_id"], name: "index_meals_on_recipe_id"
   end
 
-  create_table "my_list_to_buys", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "plan_id", null: false
-    t.bigint "groceries_lists_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["groceries_lists_id"], name: "index_my_list_to_buys_on_groceries_lists_id"
-    t.index ["plan_id"], name: "index_my_list_to_buys_on_plan_id"
-    t.index ["user_id"], name: "index_my_list_to_buys_on_user_id"
-  end
-
   create_table "plans", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "final_date"
