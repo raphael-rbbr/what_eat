@@ -1,4 +1,4 @@
-<div class="body-container">
+<div class="body-container-profile mb-4">
   <div class="profile-details">
     <div class="profile-box details">
       <h3> Tell us about your preferences </h3>
@@ -6,9 +6,9 @@
         <div class="profile-photo">
           <% if current_user.profile_photo.valid? %>
             <%= cl_image_tag current_user.profile_photo.key, height: 200, width: 200, radius: 100, crop: :fill %>
-        <% else %>
-            <%= image_tag "profil.jpg", height: 150, width: 150, radius: 100, crop: :fill %>
-        <% end %>
+          <% else %>
+            <%= image_tag("profil.jpg", height: 200, width: 200, radius: 100, crop: :fill, class: "profile-pic") %>
+          <% end %>
         </div>
       </div>
       <div class="profile-preferences">
@@ -50,12 +50,12 @@
         <div class="profile-plans">
           <div class="profile-current-plans">
             <h3> Current Plan </h3>
-            <%= link_to "#{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %>
+            <%= link_to "#{Date.today.beginning_of_week.strftime('%d')} #{Date.today.beginning_of_week.strftime('%b')} #{Date.today.beginning_of_week.strftime('%y')} to #{(Date.today.beginning_of_week+6).strftime('%d')} #{(Date.today.beginning_of_week+6).strftime('%b')} #{(Date.today.beginning_of_week+6).strftime('%y')}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %>
           </div>
           <br><br>
           <div class="profile-old-plans">
             <h3> Old Plans </h3>
-              <h9>You don't have old plans yet.</h9>
+              <h9>You don't have old plans yet!</h9>
           </div>
         </div>
         <h3></h3>

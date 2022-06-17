@@ -2,19 +2,20 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalIntolerancesLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <h3></h3>
+          <h3 class="modal-title" id="exampleModalIntolerancesLabel">Select your Intolerances!</h3>
+          <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-circle-fill"></i>
           </button>
         </div>
         <div class="modal-body">
           <%# <% @intolerances=current_user.intolerances %>
             <%= simple_form_for @intolerances do |f| %>
-              <%= f.input :intolerances, as: :check_boxes, collection: [['Dairy',0], ['Egg',1], ['Gluten',2], ['Peanut',3], ['Sesame',4], ['Seafood',5], ['Shellfish',6], ['Soy',7], ['Sulfite',8], ['Tree nut',9], ['Wheat',10]]%>
+              <h9><%= f.input :intolerances, as: :check_boxes, collection: [['Dairy',0], ['Egg',1], ['Gluten',2], ['Peanut',3], ['Sesame',4], ['Seafood',5], ['Shellfish',6], ['Soy',7], ['Sulfite',8], ['Tree nut',9], ['Wheat',10]]%></h9>
           </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <%= f.submit class:"btn btn-primary" %>
+          <button type="button" class="button-1 close" data-dismiss="modal">Close</button>
+              <%= f.button :submit, 'Create', class:"button-1" %>
             <% end %>
         </div>
       </div>
