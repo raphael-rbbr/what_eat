@@ -16,16 +16,28 @@ class Profile::GroceriesListsController < ApplicationController
   end
 
   def show
-    @ingredients_all = Ingredient.last(20)
+    @ingredients_all = []
     @ingredients = {}
+
+    @user.meals.each do |meal|
+      @ingredients_all << meal.recipe.ingredients
+    end
+
+    @ingredients_all.each do |ingredients|
+      ingredients.each do |ingredient|
+        @ingredients.store(ingredient.name, ingredient.quantity)
+      end
+    end
+    @ingredient_sum = Hash[@ingredients.sort]
+
+    # @ingredients_all = []
+    # @ingredients = {}
     # @meals = @user.meals
     # @meals.each do |meal|
     #   @ingredients_all << meal.ingredients
     # end
-    @ingredients_all.each do |ingredients|
-      @ingredients.store(ingredients.name, ingredients.quantity)
-    end
-    @ingredient_sum = Hash[@ingredients.sort]
+
+
   end
 
   private
