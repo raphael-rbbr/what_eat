@@ -42,8 +42,9 @@
       <% if current_user.plans == [] %>
         <div class="profile-current-plans">
           <h3> You don't have any plans yet </h3>
-          <button class="button-1"><%= link_to "Create a new plan", profile_plans_path, method: :post %></button>
-          <h3></h3>
+          <div class="profile-without-plans">
+            <button class="button-1"><%= link_to "New plan", profile_plans_path, method: :post %></button>
+          </div>
         </div>
       <% else %>
         <h3> Select your plan! </h3>
