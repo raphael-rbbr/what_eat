@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   background-color: #fffff3;
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   justify-content: center;
@@ -9,6 +9,9 @@
   color: #E05A47;
   text-align: center;
   padding: 10px 0 10px 0;
+  font-family: Kanit;
+  font-size: 14px;
+  color: #E05A47;
 }
 
 .footer-credits{
