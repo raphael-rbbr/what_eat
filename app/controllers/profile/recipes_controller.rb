@@ -36,6 +36,8 @@ class Profile::RecipesController < ApplicationController
   def create_recipes
     @recipes = Recipe.create_user_recipes(current_user)
     skip_authorization
+    # @recipes.save
+    # authorize @recipes
 
     redirect_to profile_plan_path(Plan.last)
   end
