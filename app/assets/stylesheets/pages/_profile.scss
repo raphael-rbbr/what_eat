@@ -13,20 +13,21 @@ body{
   text-align: center;
   background-color: #E05A47;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .profile-specs {
-  padding: 20px;
+  padding: 10px;
 }
 
 .profile-box {
   flex-direction: column;
   background-color: #FFFFF3;
   border-radius: 40px;
-  width: 560px;
-  padding: 36px;
+  width: 480px;
+  padding: 30px;
   justify-content: space-between;
+  margin: 0px 20px;
 }
 
 .profile-photo{
@@ -74,6 +75,10 @@ body{
 
 .form-check-input.is-valid ~ .form-check-label {
   color: black;
+}
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
 }
 
 .form-check-input.is-valid {
