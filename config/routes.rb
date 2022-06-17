@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :meals, only: [ :index, :show, :create, :destroy ]
     resources :groceries_lists, only: [:show]
     resources :plans, only: [:index, :show, :new, :create]
+    post "create_recipes", to: "recipes#create_recipes"
     # resources :meals do
     #   member do
     #     patch :move
@@ -23,5 +24,5 @@ Rails.application.routes.draw do
   end
 
   resources :diets, only: [:create, :edit, :update]
-  resources :intolerances, only: [:edit, :update]
+  resources :intolerances, only: [:new, :create]
 end

@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   def profile
     @plans = current_user.plans
     @recipes = current_user.recipes
+    @intolerances = Intolerance.new
   end
 
   private
