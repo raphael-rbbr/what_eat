@@ -77,6 +77,10 @@ body{
   color: black;
 }
 
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}
+
 .form-check-input.is-valid {
   border-color: black;
 }
