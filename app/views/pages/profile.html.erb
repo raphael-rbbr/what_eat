@@ -50,12 +50,12 @@
         <div class="profile-plans">
           <div class="profile-current-plans">
             <h3> Current Plan </h3>
-            <%= link_to "#{Date.today.beginning_of_week} to #{Date.today.beginning_of_week+6}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %>
+            <%= link_to "#{Date.today.beginning_of_week.strftime('%d')} #{Date.today.beginning_of_week.strftime('%b')} #{Date.today.beginning_of_week.strftime('%y')} to #{(Date.today.beginning_of_week+6).strftime('%d')} #{(Date.today.beginning_of_week+6).strftime('%b')} #{(Date.today.beginning_of_week+6).strftime('%y')}", "/profile/plans/#{@plans.last.id}", class: "nav-link" %>
           </div>
           <br><br>
           <div class="profile-old-plans">
             <h3> Old Plans </h3>
-              <h9>You don't have old plans yet.</h9>
+              <h9>You don't have old plans yet!</h9>
           </div>
         </div>
         <h3></h3>
