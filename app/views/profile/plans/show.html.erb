@@ -44,13 +44,16 @@
             data-meal-card-target="recipe">
             <div class="meal-card-info">
               <%# btn details - I want to kill it and transform all card clickable %>
-              <div  class="link-card"
+              <div class="link-card"
                 data-toggle="modal"
                 data-target="#modal-xl<%=recipe.id%>">
-                <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
                 <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
+                <button class="info-button-container" data-action="meal-card#click"><h8>+info<h8></button>
               </div>
-              <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
+              <div class="meal-card-info-text">
+                <h8><strong><%= recipe.title %></strong></h8>
+                <h8><%= recipe.servings %> servings</h8></i>
+              </div>
             </div>
           </div>
           <%# modal of recipe %>
