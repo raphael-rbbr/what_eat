@@ -1,77 +1,68 @@
 <div class="body-container-plan">
   <div class="main-container-plan">
-    <div class="header-container-plan">
-      <div class="title-container-plan">
-        <h3>Página Plan-Show</h3>
+    <div class="main-timetable-container">
+      <div class="timetable-header">
+        <div class="timetable-title">
+          <h3>Página Plan-Show</h3>
+        </div>
+        <div class="timetable-buttons">
+          <%= link_to "Groceries List", profile_groceries_list_path(@user)%>
+          <%= link_to "Generate Your Recipes!", profile_recipes_path, method: :post, class: "button-2"  %>
+        </div>
+        <%# Recipe.create_user_recipes(current_user) if current_user.recipes == [] %>
       </div>
-      <div class="header-buttons-container-plan">
-        <%= link_to "Groceries List", profile_groceries_list_path(@user)%>
-        <%= link_to "Generate Your Recipes!", profile_recipes_path, method: :post, class: "button-2"  %>
+      <div class="timetable-container">
+        <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
+        <%# <%= raise %>
+        <%= render "timetable_titles" %>
+        <div class="timetable-content">
+          <%= render "timetable_content" %>
+        </div>
       </div>
-      <%# Recipe.create_user_recipes(current_user) if current_user.recipes == [] %>
     </div>
-  </div>
-  <div class="planner-container">
-
-    <div class="timetable-container">
-      <%# incluir forma de puxar apenas os dados do plano atual pela data " , locals: { plan:  } " %>
-      <%# <%= raise %>
-      <%= render "timetable_titles" %>
-    </div>
-    <div class="timetable-content">
-      <%= render "timetable_content" %>
-    </div>
-
-    <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer" id="cloning">
-
-      <div>
-        <h3><strong> Selected Meals for You! </strong></h3>
+    <div class="main-recipes-container">
+      <div class="recipe-cards-header">
+        <h3>Selected Recipes for You!</h3>
       </div>
-
-      <% @user.recipes.each do |recipe| %>
-        <div  class="list-group-item"
-
-              <%# hooks para criar meal %>
-              id="<%= recipe.id %>"
-              data-drag-item-target="recipe"
-
-              <%# hooks para modal-details %>
-              data-controller="meal-card"
-              data-meal-card-target="recipe">
-
-          <div class="meal-card-info">
-            <%# btn details - I want to kill it and transform all card clickable %>
-            <div  class="link-card"
+      <div class="recipe-cards-container" data-controller="drag-item" data-drag-item-target="recipeCardContainer" id="cloning">
+        <% @user.recipes.each do |recipe| %>
+         <div class="list-group-item"
+            <%# hooks para criar meal %>
+            id="<%= recipe.id %>"
+            data-drag-item-target="recipe"
+            <%# hooks para modal-details %>
+            data-controller="meal-card"
+            data-meal-card-target="recipe">
+            <div class="meal-card-info">
+              <%# btn details - I want to kill it and transform all card clickable %>
+              <div  class="link-card"
                   data-toggle="modal"
                   data-target="#modal-xl<%=recipe.id%>">
-              <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
-              <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
+                <button class="info-button" data-action="meal-card#click"><i class="bi bi-info-circle-fill"></i></button>
+                <%= cl_image_tag recipe.recipe_photo.key, class:"meal-img" %>
+              </div>
+              <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
             </div>
-
-            <h4><strong><%= recipe.title %> • <%= recipe.servings %><i class="bi bi-people-fill"></i></strong></h4>
           </div>
-        </div>
-
-        <%# modal of recipe %>
-        <div  class="modal fade modal-xl"
-              data-controller="modal"
-              data-action="meal-card:click@window->modal#open"
-              id="modal-xl<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal-xl<%=recipe.id%>Title" aria-hidden="true">
-          <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-            <div class="modal-content">
+          <%# modal of recipe %>
+          <div class="modal fade modal-xl"
+            data-controller="modal"
+            data-action="meal-card:click@window->modal#open"
+            id="modal-xl<%=recipe.id%>" tabindex="-1" role="dialog" aria-labelledby="modal-xl<%=recipe.id%>Title" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+             <div class="modal-content">
               <%# replace the html woth the partial _recipe of the recipe id chosen %>
-              <div  class="modal-body">
+              <div class="modal-body">
                 <div id="recipe<%=recipe.id%>">
                 </div>
               </div>
+             </div>
             </div>
           </div>
-        </div>
-
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-
 </div>
 
-<%# <%= render partial: "show", locals: {recipe: Recipe.find_by(title: "Green Lemonade")}%> %>
+<%# <%= render partial: "show", locals: {recipe: Recipe.find_by(title: "Green Lemonade")}%>
